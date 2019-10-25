@@ -1,0 +1,889 @@
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20001} Parameters : [00ffba5e7a44d7a71e6f00bee090c2fa]
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20001} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20001} executed. 1.848849 millis. SELECT * FROM orders_database.orders WHERE id=? 
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50006} open
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50006} Header: [id, order_no, order_status, finish_date, delete_date, create_date, create_user, update_date, update_user, amount]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50006} Result: [00ffba5e7a44d7a71e6f00bee090c2fa, 1571305399313, 0, null, null, 2019-10-17 17:43:19.0, wangjian, 2019-10-17 17:43:19.0, wangjian, 6000.0]
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20002} Parameters : []
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20002} Types : []
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20002} executed. 1.146059 millis. SELECT * FROM orders_detail
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50007} open
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50007} Header: [id, orders_id, commodity_id, commodity_name, price, quantity, amount, create_date, create_user, update_date, update_user]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50007} Result: [17b1769e16ad5bbef9d5f03b355d551e, 00ffba5e7a44d7a71e6f00bee090c2fa, 62154adeb56988df1b1243487f4c8179, 笔记本, 6000.0, 1, 6000.0, 2019-10-17 17:29:56.0, wangjian, 2019-10-17 17:29:56.0, wangjian]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50007} closed
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20002} clearParameters. 
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50006} closed
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20001} clearParameters. 
+DEBUG http-nio-8084-exec-2 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-2 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20001} Parameters : [00ffba5e7a44d7a71e6f00bee090c2fa]
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20001} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20001} executed. 0.844541 millis. SELECT * FROM orders_database.orders WHERE id=? 
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50008} open
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50008} Header: [id, order_no, order_status, finish_date, delete_date, create_date, create_user, update_date, update_user, amount]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50008} Result: [00ffba5e7a44d7a71e6f00bee090c2fa, 1571305399313, 0, null, null, 2019-10-17 17:43:19.0, wangjian, 2019-10-17 17:43:19.0, wangjian, 6000.0]
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20002} Parameters : []
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20002} Types : []
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20002} executed. 0.986737 millis. SELECT * FROM orders_detail
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50009} open
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50009} Header: [id, orders_id, commodity_id, commodity_name, price, quantity, amount, create_date, create_user, update_date, update_user]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50009} Result: [17b1769e16ad5bbef9d5f03b355d551e, 00ffba5e7a44d7a71e6f00bee090c2fa, 62154adeb56988df1b1243487f4c8179, 笔记本, 6000.0, 1, 6000.0, 2019-10-17 17:29:56.0, wangjian, 2019-10-17 17:29:56.0, wangjian]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50009} closed
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20002} clearParameters. 
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50008} closed
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20001} clearParameters. 
+DEBUG http-nio-8084-exec-2 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-2 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20003} Parameters : [00ffba5e7a44d7a71e6f00bee090c2fa]
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20003} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20003} executed. 1.160789 millis. SELECT  id,update_date,amount,quantity,orders_id AS orderId,price,update_user,create_user,commodity_id,create_date,commodity_name  FROM orders_database.orders_detail 
+ 
+ WHERE (orders_id >= ?)
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50010} open
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50010} Header: [id, update_date, amount, quantity, orders_id, price, update_user, create_user, commodity_id, create_date, commodity_name]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50010} Result: [17b1769e16ad5bbef9d5f03b355d551e, 2019-10-17 17:29:56.0, 6000.0, 1, 00ffba5e7a44d7a71e6f00bee090c2fa, 6000.0, wangjian, wangjian, 62154adeb56988df1b1243487f4c8179, 2019-10-17 17:29:56.0, 笔记本]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50010} closed
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20003} clearParameters. 
+DEBUG http-nio-8084-exec-2 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG Thread-13 druid.sql.Statement - {conn-10001, pstmt-20002} closed
+DEBUG Thread-13 druid.sql.Statement - {conn-10001, pstmt-20001} closed
+DEBUG Thread-13 druid.sql.Statement - {conn-10001, pstmt-20003} closed
+DEBUG Thread-13 druid.sql.Connection - {conn-10001} closed
+DEBUG main druid.sql.Connection - {conn-10001} connected
+DEBUG RMI TCP Connection(3)-127.0.0.1 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG RMI TCP Connection(3)-127.0.0.1 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG RMI TCP Connection(3)-127.0.0.1 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG RMI TCP Connection(3)-127.0.0.1 druid.sql.Statement - {conn-10001, stmt-20000} created
+DEBUG RMI TCP Connection(3)-127.0.0.1 druid.sql.Statement - {conn-10001, stmt-20000, rs-50000} query executed. 66.06374 millis. /* ping */ SELECT 1
+DEBUG RMI TCP Connection(3)-127.0.0.1 druid.sql.ResultSet - {conn-10001, stmt-20000, rs-50000} open
+DEBUG RMI TCP Connection(3)-127.0.0.1 druid.sql.ResultSet - {conn-10001, stmt-20000, rs-50000} Header: [1]
+DEBUG RMI TCP Connection(3)-127.0.0.1 druid.sql.ResultSet - {conn-10001, stmt-20000, rs-50000} Result: [1]
+DEBUG RMI TCP Connection(3)-127.0.0.1 druid.sql.ResultSet - {conn-10001, stmt-20000, rs-50000} closed
+DEBUG RMI TCP Connection(3)-127.0.0.1 druid.sql.Statement - {conn-10001, stmt-20000} closed
+DEBUG RMI TCP Connection(3)-127.0.0.1 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-1 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20001} created. SELECT * FROM orders_database.orders WHERE id=? 
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20001} Parameters : [00ffba5e7a44d7a71e6f00bee090c2fa]
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20001} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20001} executed. 1.738685 millis. SELECT * FROM orders_database.orders WHERE id=? 
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50001} open
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50001} Header: [id, order_no, order_status, finish_date, delete_date, create_date, create_user, update_date, update_user, amount]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50001} Result: [00ffba5e7a44d7a71e6f00bee090c2fa, 1571305399313, 0, null, null, 2019-10-17 17:43:19.0, wangjian, 2019-10-17 17:43:19.0, wangjian, 6000.0]
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20002} created. SELECT * FROM orders_detail
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20002} Parameters : []
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20002} Types : []
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20002} executed. 0.926787 millis. SELECT * FROM orders_detail
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} open
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Header: [id, orders_id, commodity_id, commodity_name, price, quantity, amount, create_date, create_user, update_date, update_user]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [17b1769e16ad5bbef9d5f03b355d551e, 00ffba5e7a44d7a71e6f00bee090c2fa, 62154adeb56988df1b1243487f4c8179, 笔记本, 6000.0, 1, 6000.0, 2019-10-17 17:29:56.0, wangjian, 2019-10-17 17:29:56.0, wangjian]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} closed
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20002} clearParameters. 
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50001} closed
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20001} clearParameters. 
+DEBUG http-nio-8084-exec-1 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-1 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20001} Parameters : [00ffba5e7a44d7a71e6f00bee090c2fa]
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20001} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20001} executed. 0.902329 millis. SELECT * FROM orders_database.orders WHERE id=? 
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50003} open
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50003} Header: [id, order_no, order_status, finish_date, delete_date, create_date, create_user, update_date, update_user, amount]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50003} Result: [00ffba5e7a44d7a71e6f00bee090c2fa, 1571305399313, 0, null, null, 2019-10-17 17:43:19.0, wangjian, 2019-10-17 17:43:19.0, wangjian, 6000.0]
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20002} Parameters : []
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20002} Types : []
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20002} executed. 0.811388 millis. SELECT * FROM orders_detail
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50004} open
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50004} Header: [id, orders_id, commodity_id, commodity_name, price, quantity, amount, create_date, create_user, update_date, update_user]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50004} Result: [17b1769e16ad5bbef9d5f03b355d551e, 00ffba5e7a44d7a71e6f00bee090c2fa, 62154adeb56988df1b1243487f4c8179, 笔记本, 6000.0, 1, 6000.0, 2019-10-17 17:29:56.0, wangjian, 2019-10-17 17:29:56.0, wangjian]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50004} closed
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20002} clearParameters. 
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50003} closed
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20001} clearParameters. 
+DEBUG http-nio-8084-exec-1 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-1 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20003} created. SELECT  id,update_date,amount,quantity,orders_id AS orderId,price,update_user,create_user,commodity_id,create_date,commodity_name  FROM orders_database.orders_detail 
+ 
+ WHERE (orders_id >= ?)
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20003} Parameters : [00ffba5e7a44d7a71e6f00bee090c2fa]
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20003} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20003} executed. 0.975512 millis. SELECT  id,update_date,amount,quantity,orders_id AS orderId,price,update_user,create_user,commodity_id,create_date,commodity_name  FROM orders_database.orders_detail 
+ 
+ WHERE (orders_id >= ?)
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50005} open
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50005} Header: [id, update_date, amount, quantity, orders_id, price, update_user, create_user, commodity_id, create_date, commodity_name]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50005} Result: [17b1769e16ad5bbef9d5f03b355d551e, 2019-10-17 17:29:56.0, 6000.0, 1, 00ffba5e7a44d7a71e6f00bee090c2fa, 6000.0, wangjian, wangjian, 62154adeb56988df1b1243487f4c8179, 2019-10-17 17:29:56.0, 笔记本]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50005} closed
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20003} clearParameters. 
+DEBUG http-nio-8084-exec-1 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-5 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10001, pstmt-20004} created. SELECT  *  FROM orders_database.orders 
+ 
+ WHERE (create_user = ?)
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10001, pstmt-20004} Parameters : [wangjian]
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10001, pstmt-20004} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10001, pstmt-20004} executed. 1.610011 millis. SELECT  *  FROM orders_database.orders 
+ 
+ WHERE (create_user = ?)
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10001, pstmt-20004, rs-50006} open
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10001, pstmt-20004, rs-50006} Header: [id, order_no, order_status, finish_date, delete_date, create_date, create_user, update_date, update_user, amount]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10001, pstmt-20004, rs-50006} Result: [00ffba5e7a44d7a71e6f00bee090c2fa, 1571305399313, 0, null, null, 2019-10-17 17:43:19.0, wangjian, 2019-10-17 17:43:19.0, wangjian, 6000.0]
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10001, pstmt-20002} Parameters : []
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10001, pstmt-20002} Types : []
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10001, pstmt-20002} executed. 5.514285 millis. SELECT * FROM orders_detail
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50007} open
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50007} Header: [id, orders_id, commodity_id, commodity_name, price, quantity, amount, create_date, create_user, update_date, update_user]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50007} Result: [17b1769e16ad5bbef9d5f03b355d551e, 00ffba5e7a44d7a71e6f00bee090c2fa, 62154adeb56988df1b1243487f4c8179, 笔记本, 6000.0, 1, 6000.0, 2019-10-17 17:29:56.0, wangjian, 2019-10-17 17:29:56.0, wangjian]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50007} closed
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10001, pstmt-20002} clearParameters. 
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10001, pstmt-20004, rs-50006} closed
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10001, pstmt-20004} clearParameters. 
+DEBUG http-nio-8084-exec-5 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-4 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-4 druid.sql.Statement - {conn-10001, pstmt-20004} Parameters : [wangjian]
+DEBUG http-nio-8084-exec-4 druid.sql.Statement - {conn-10001, pstmt-20004} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-4 druid.sql.Statement - {conn-10001, pstmt-20004} executed. 1.259423 millis. SELECT  *  FROM orders_database.orders 
+ 
+ WHERE (create_user = ?)
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10001, pstmt-20004, rs-50008} open
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10001, pstmt-20004, rs-50008} Header: [id, order_no, order_status, finish_date, delete_date, create_date, create_user, update_date, update_user, amount]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10001, pstmt-20004, rs-50008} Result: [00ffba5e7a44d7a71e6f00bee090c2fa, 1571305399313, 0, null, null, 2019-10-17 17:43:19.0, wangjian, 2019-10-17 17:43:19.0, wangjian, 6000.0]
+DEBUG http-nio-8084-exec-4 druid.sql.Statement - {conn-10001, pstmt-20002} Parameters : []
+DEBUG http-nio-8084-exec-4 druid.sql.Statement - {conn-10001, pstmt-20002} Types : []
+DEBUG http-nio-8084-exec-4 druid.sql.Statement - {conn-10001, pstmt-20002} executed. 1.434721 millis. SELECT * FROM orders_detail
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50009} open
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50009} Header: [id, orders_id, commodity_id, commodity_name, price, quantity, amount, create_date, create_user, update_date, update_user]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50009} Result: [17b1769e16ad5bbef9d5f03b355d551e, 00ffba5e7a44d7a71e6f00bee090c2fa, 62154adeb56988df1b1243487f4c8179, 笔记本, 6000.0, 1, 6000.0, 2019-10-17 17:29:56.0, wangjian, 2019-10-17 17:29:56.0, wangjian]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50009} closed
+DEBUG http-nio-8084-exec-4 druid.sql.Statement - {conn-10001, pstmt-20002} clearParameters. 
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10001, pstmt-20004, rs-50008} closed
+DEBUG http-nio-8084-exec-4 druid.sql.Statement - {conn-10001, pstmt-20004} clearParameters. 
+DEBUG http-nio-8084-exec-4 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-7 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-7 druid.sql.Statement - {conn-10001, pstmt-20004} Parameters : [wangjian]
+DEBUG http-nio-8084-exec-7 druid.sql.Statement - {conn-10001, pstmt-20004} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-7 druid.sql.Statement - {conn-10001, pstmt-20004} executed. 1.015324 millis. SELECT  *  FROM orders_database.orders 
+ 
+ WHERE (create_user = ?)
+DEBUG http-nio-8084-exec-7 druid.sql.ResultSet - {conn-10001, pstmt-20004, rs-50010} open
+DEBUG http-nio-8084-exec-7 druid.sql.ResultSet - {conn-10001, pstmt-20004, rs-50010} Header: [id, order_no, order_status, finish_date, delete_date, create_date, create_user, update_date, update_user, amount]
+DEBUG http-nio-8084-exec-7 druid.sql.ResultSet - {conn-10001, pstmt-20004, rs-50010} Result: [00ffba5e7a44d7a71e6f00bee090c2fa, 1571305399313, 0, null, null, 2019-10-17 17:43:19.0, wangjian, 2019-10-17 17:43:19.0, wangjian, 6000.0]
+DEBUG http-nio-8084-exec-7 druid.sql.Statement - {conn-10001, pstmt-20002} Parameters : []
+DEBUG http-nio-8084-exec-7 druid.sql.Statement - {conn-10001, pstmt-20002} Types : []
+DEBUG http-nio-8084-exec-7 druid.sql.Statement - {conn-10001, pstmt-20002} executed. 1.114686 millis. SELECT * FROM orders_detail
+DEBUG http-nio-8084-exec-7 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50011} open
+DEBUG http-nio-8084-exec-7 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50011} Header: [id, orders_id, commodity_id, commodity_name, price, quantity, amount, create_date, create_user, update_date, update_user]
+DEBUG http-nio-8084-exec-7 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50011} Result: [17b1769e16ad5bbef9d5f03b355d551e, 00ffba5e7a44d7a71e6f00bee090c2fa, 62154adeb56988df1b1243487f4c8179, 笔记本, 6000.0, 1, 6000.0, 2019-10-17 17:29:56.0, wangjian, 2019-10-17 17:29:56.0, wangjian]
+DEBUG http-nio-8084-exec-7 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50011} closed
+DEBUG http-nio-8084-exec-7 druid.sql.Statement - {conn-10001, pstmt-20002} clearParameters. 
+DEBUG http-nio-8084-exec-7 druid.sql.ResultSet - {conn-10001, pstmt-20004, rs-50010} closed
+DEBUG http-nio-8084-exec-7 druid.sql.Statement - {conn-10001, pstmt-20004} clearParameters. 
+DEBUG http-nio-8084-exec-7 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-2 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20004} Parameters : [wangjian]
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20004} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20004} executed. 1.114416 millis. SELECT  *  FROM orders_database.orders 
+ 
+ WHERE (create_user = ?)
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20004, rs-50012} open
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20004, rs-50012} Header: [id, order_no, order_status, finish_date, delete_date, create_date, create_user, update_date, update_user, amount]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20004, rs-50012} Result: [00ffba5e7a44d7a71e6f00bee090c2fa, 1571305399313, 0, null, null, 2019-10-17 17:43:19.0, wangjian, 2019-10-17 17:43:19.0, wangjian, 6000.0]
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20002} Parameters : []
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20002} Types : []
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20002} executed. 1.521068 millis. SELECT * FROM orders_detail
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50013} open
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50013} Header: [id, orders_id, commodity_id, commodity_name, price, quantity, amount, create_date, create_user, update_date, update_user]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50013} Result: [17b1769e16ad5bbef9d5f03b355d551e, 00ffba5e7a44d7a71e6f00bee090c2fa, 62154adeb56988df1b1243487f4c8179, 笔记本, 6000.0, 1, 6000.0, 2019-10-17 17:29:56.0, wangjian, 2019-10-17 17:29:56.0, wangjian]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50013} closed
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20002} clearParameters. 
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20004, rs-50012} closed
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20004} clearParameters. 
+DEBUG http-nio-8084-exec-2 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-10 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-10 druid.sql.Statement - {conn-10001, pstmt-20004} Parameters : [wangjian]
+DEBUG http-nio-8084-exec-10 druid.sql.Statement - {conn-10001, pstmt-20004} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-10 druid.sql.Statement - {conn-10001, pstmt-20004} executed. 1.105314 millis. SELECT  *  FROM orders_database.orders 
+ 
+ WHERE (create_user = ?)
+DEBUG http-nio-8084-exec-10 druid.sql.ResultSet - {conn-10001, pstmt-20004, rs-50014} open
+DEBUG http-nio-8084-exec-10 druid.sql.ResultSet - {conn-10001, pstmt-20004, rs-50014} Header: [id, order_no, order_status, finish_date, delete_date, create_date, create_user, update_date, update_user, amount]
+DEBUG http-nio-8084-exec-10 druid.sql.ResultSet - {conn-10001, pstmt-20004, rs-50014} Result: [00ffba5e7a44d7a71e6f00bee090c2fa, 1571305399313, 0, null, null, 2019-10-17 17:43:19.0, wangjian, 2019-10-17 17:43:19.0, wangjian, 6000.0]
+DEBUG http-nio-8084-exec-10 druid.sql.Statement - {conn-10001, pstmt-20002} Parameters : []
+DEBUG http-nio-8084-exec-10 druid.sql.Statement - {conn-10001, pstmt-20002} Types : []
+DEBUG http-nio-8084-exec-10 druid.sql.Statement - {conn-10001, pstmt-20002} executed. 1.039169 millis. SELECT * FROM orders_detail
+DEBUG http-nio-8084-exec-10 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50015} open
+DEBUG http-nio-8084-exec-10 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50015} Header: [id, orders_id, commodity_id, commodity_name, price, quantity, amount, create_date, create_user, update_date, update_user]
+DEBUG http-nio-8084-exec-10 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50015} Result: [17b1769e16ad5bbef9d5f03b355d551e, 00ffba5e7a44d7a71e6f00bee090c2fa, 62154adeb56988df1b1243487f4c8179, 笔记本, 6000.0, 1, 6000.0, 2019-10-17 17:29:56.0, wangjian, 2019-10-17 17:29:56.0, wangjian]
+DEBUG http-nio-8084-exec-10 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50015} closed
+DEBUG http-nio-8084-exec-10 druid.sql.Statement - {conn-10001, pstmt-20002} clearParameters. 
+DEBUG http-nio-8084-exec-10 druid.sql.ResultSet - {conn-10001, pstmt-20004, rs-50014} closed
+DEBUG http-nio-8084-exec-10 druid.sql.Statement - {conn-10001, pstmt-20004} clearParameters. 
+DEBUG http-nio-8084-exec-10 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG Thread-13 druid.sql.Statement - {conn-10001, pstmt-20001} closed
+DEBUG Thread-13 druid.sql.Statement - {conn-10001, pstmt-20003} closed
+DEBUG Thread-13 druid.sql.Statement - {conn-10001, pstmt-20002} closed
+DEBUG Thread-13 druid.sql.Statement - {conn-10001, pstmt-20004} closed
+DEBUG Thread-13 druid.sql.Connection - {conn-10001} closed
+DEBUG main druid.sql.Connection - {conn-10001} connected
+DEBUG RMI TCP Connection(1)-127.0.0.1 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG RMI TCP Connection(1)-127.0.0.1 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG RMI TCP Connection(1)-127.0.0.1 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG RMI TCP Connection(1)-127.0.0.1 druid.sql.Statement - {conn-10001, stmt-20000} created
+DEBUG RMI TCP Connection(1)-127.0.0.1 druid.sql.Statement - {conn-10001, stmt-20000, rs-50000} query executed. 182.146723 millis. /* ping */ SELECT 1
+DEBUG RMI TCP Connection(1)-127.0.0.1 druid.sql.ResultSet - {conn-10001, stmt-20000, rs-50000} open
+DEBUG RMI TCP Connection(1)-127.0.0.1 druid.sql.ResultSet - {conn-10001, stmt-20000, rs-50000} Header: [1]
+DEBUG RMI TCP Connection(1)-127.0.0.1 druid.sql.ResultSet - {conn-10001, stmt-20000, rs-50000} Result: [1]
+DEBUG RMI TCP Connection(1)-127.0.0.1 druid.sql.ResultSet - {conn-10001, stmt-20000, rs-50000} closed
+DEBUG RMI TCP Connection(1)-127.0.0.1 druid.sql.Statement - {conn-10001, stmt-20000} closed
+DEBUG RMI TCP Connection(1)-127.0.0.1 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-1 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20001} created. SELECT  *  FROM orders_database.orders 
+ 
+ WHERE (create_user = ?)
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20001} Parameters : [wangjian]
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20001} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20001} executed. 1.72782 millis. SELECT  *  FROM orders_database.orders 
+ 
+ WHERE (create_user = ?)
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50001} open
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50001} Header: [id, order_no, order_status, finish_date, delete_date, create_date, create_user, update_date, update_user, amount]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50001} Result: [00ffba5e7a44d7a71e6f00bee090c2fa, 1571305399313, 0, null, null, 2019-10-17 17:43:19.0, wangjian, 2019-10-17 17:43:19.0, wangjian, 6000.0]
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20002} created. SELECT * FROM orders_detail
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20002} Parameters : []
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20002} Types : []
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20002} executed. 1.011418 millis. SELECT * FROM orders_detail
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} open
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Header: [id, orders_id, commodity_id, commodity_name, price, quantity, amount, create_date, create_user, update_date, update_user]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [17b1769e16ad5bbef9d5f03b355d551e, 00ffba5e7a44d7a71e6f00bee090c2fa, 62154adeb56988df1b1243487f4c8179, 笔记本, 6000.0, 1, 6000.0, 2019-10-17 17:29:56.0, wangjian, 2019-10-17 17:29:56.0, wangjian]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} closed
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20002} clearParameters. 
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50001} closed
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20001} clearParameters. 
+DEBUG http-nio-8084-exec-1 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-2 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20001} Parameters : [wangjian]
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20001} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20001} executed. 1.793729 millis. SELECT  *  FROM orders_database.orders 
+ 
+ WHERE (create_user = ?)
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50003} open
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50003} Header: [id, order_no, order_status, finish_date, delete_date, create_date, create_user, update_date, update_user, amount]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50003} Result: [00ffba5e7a44d7a71e6f00bee090c2fa, 1571305399313, 0, null, null, 2019-10-17 17:43:19.0, wangjian, 2019-10-17 17:43:19.0, wangjian, 6000.0]
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20002} Parameters : []
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20002} Types : []
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20002} executed. 3.444018 millis. SELECT * FROM orders_detail
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50004} open
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50004} Header: [id, orders_id, commodity_id, commodity_name, price, quantity, amount, create_date, create_user, update_date, update_user]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50004} Result: [17b1769e16ad5bbef9d5f03b355d551e, 00ffba5e7a44d7a71e6f00bee090c2fa, 62154adeb56988df1b1243487f4c8179, 笔记本, 6000.0, 1, 6000.0, 2019-10-17 17:29:56.0, wangjian, 2019-10-17 17:29:56.0, wangjian]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50004} closed
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20002} clearParameters. 
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50003} closed
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20001} clearParameters. 
+DEBUG http-nio-8084-exec-2 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-3 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10001, pstmt-20001} Parameters : [wangjian]
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10001, pstmt-20001} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10001, pstmt-20001} executed. 1.139847 millis. SELECT  *  FROM orders_database.orders 
+ 
+ WHERE (create_user = ?)
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50005} open
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50005} Header: [id, order_no, order_status, finish_date, delete_date, create_date, create_user, update_date, update_user, amount]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50005} Result: [00ffba5e7a44d7a71e6f00bee090c2fa, 1571305399313, 0, null, null, 2019-10-17 17:43:19.0, wangjian, 2019-10-17 17:43:19.0, wangjian, 6000.0]
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10001, pstmt-20002} Parameters : []
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10001, pstmt-20002} Types : []
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10001, pstmt-20002} executed. 1.603952 millis. SELECT * FROM orders_detail
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50006} open
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50006} Header: [id, orders_id, commodity_id, commodity_name, price, quantity, amount, create_date, create_user, update_date, update_user]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50006} Result: [17b1769e16ad5bbef9d5f03b355d551e, 00ffba5e7a44d7a71e6f00bee090c2fa, 62154adeb56988df1b1243487f4c8179, 笔记本, 6000.0, 1, 6000.0, 2019-10-17 17:29:56.0, wangjian, 2019-10-17 17:29:56.0, wangjian]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50006} closed
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10001, pstmt-20002} clearParameters. 
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50005} closed
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10001, pstmt-20001} clearParameters. 
+DEBUG http-nio-8084-exec-3 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-4 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-4 druid.sql.Statement - {conn-10001, pstmt-20001} Parameters : [wangjian]
+DEBUG http-nio-8084-exec-4 druid.sql.Statement - {conn-10001, pstmt-20001} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-4 druid.sql.Statement - {conn-10001, pstmt-20001} executed. 4.843248 millis. SELECT  *  FROM orders_database.orders 
+ 
+ WHERE (create_user = ?)
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50007} open
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50007} Header: [id, order_no, order_status, finish_date, delete_date, create_date, create_user, update_date, update_user, amount]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50007} Result: [00ffba5e7a44d7a71e6f00bee090c2fa, 1571305399313, 0, null, null, 2019-10-17 17:43:19.0, wangjian, 2019-10-17 17:43:19.0, wangjian, 6000.0]
+DEBUG http-nio-8084-exec-4 druid.sql.Statement - {conn-10001, pstmt-20002} Parameters : []
+DEBUG http-nio-8084-exec-4 druid.sql.Statement - {conn-10001, pstmt-20002} Types : []
+DEBUG http-nio-8084-exec-4 druid.sql.Statement - {conn-10001, pstmt-20002} executed. 1.472012 millis. SELECT * FROM orders_detail
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50008} open
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50008} Header: [id, orders_id, commodity_id, commodity_name, price, quantity, amount, create_date, create_user, update_date, update_user]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50008} Result: [17b1769e16ad5bbef9d5f03b355d551e, 00ffba5e7a44d7a71e6f00bee090c2fa, 62154adeb56988df1b1243487f4c8179, 笔记本, 6000.0, 1, 6000.0, 2019-10-17 17:29:56.0, wangjian, 2019-10-17 17:29:56.0, wangjian]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50008} closed
+DEBUG http-nio-8084-exec-4 druid.sql.Statement - {conn-10001, pstmt-20002} clearParameters. 
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50007} closed
+DEBUG http-nio-8084-exec-4 druid.sql.Statement - {conn-10001, pstmt-20001} clearParameters. 
+DEBUG http-nio-8084-exec-4 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-5 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10001, pstmt-20001} Parameters : [wangjian]
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10001, pstmt-20001} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10001, pstmt-20001} executed. 1.15412 millis. SELECT  *  FROM orders_database.orders 
+ 
+ WHERE (create_user = ?)
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50009} open
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50009} Header: [id, order_no, order_status, finish_date, delete_date, create_date, create_user, update_date, update_user, amount]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50009} Result: [00ffba5e7a44d7a71e6f00bee090c2fa, 1571305399313, 0, null, null, 2019-10-17 17:43:19.0, wangjian, 2019-10-17 17:43:19.0, wangjian, 6000.0]
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10001, pstmt-20002} Parameters : []
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10001, pstmt-20002} Types : []
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10001, pstmt-20002} executed. 0.878291 millis. SELECT * FROM orders_detail
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50010} open
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50010} Header: [id, orders_id, commodity_id, commodity_name, price, quantity, amount, create_date, create_user, update_date, update_user]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50010} Result: [17b1769e16ad5bbef9d5f03b355d551e, 00ffba5e7a44d7a71e6f00bee090c2fa, 62154adeb56988df1b1243487f4c8179, 笔记本, 6000.0, 1, 6000.0, 2019-10-17 17:29:56.0, wangjian, 2019-10-17 17:29:56.0, wangjian]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50010} closed
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10001, pstmt-20002} clearParameters. 
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50009} closed
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10001, pstmt-20001} clearParameters. 
+DEBUG http-nio-8084-exec-5 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-6 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-6 druid.sql.Statement - {conn-10001, pstmt-20001} Parameters : [wangjian]
+DEBUG http-nio-8084-exec-6 druid.sql.Statement - {conn-10001, pstmt-20001} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-6 druid.sql.Statement - {conn-10001, pstmt-20001} executed. 2.841239 millis. SELECT  *  FROM orders_database.orders 
+ 
+ WHERE (create_user = ?)
+DEBUG http-nio-8084-exec-6 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50011} open
+DEBUG http-nio-8084-exec-6 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50011} Header: [id, order_no, order_status, finish_date, delete_date, create_date, create_user, update_date, update_user, amount]
+DEBUG http-nio-8084-exec-6 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50011} Result: [00ffba5e7a44d7a71e6f00bee090c2fa, 1571305399313, 0, null, null, 2019-10-17 17:43:19.0, wangjian, 2019-10-17 17:43:19.0, wangjian, 6000.0]
+DEBUG http-nio-8084-exec-6 druid.sql.Statement - {conn-10001, pstmt-20002} Parameters : []
+DEBUG http-nio-8084-exec-6 druid.sql.Statement - {conn-10001, pstmt-20002} Types : []
+DEBUG http-nio-8084-exec-6 druid.sql.Statement - {conn-10001, pstmt-20002} executed. 1.766499 millis. SELECT * FROM orders_detail
+DEBUG http-nio-8084-exec-6 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50012} open
+DEBUG http-nio-8084-exec-6 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50012} Header: [id, orders_id, commodity_id, commodity_name, price, quantity, amount, create_date, create_user, update_date, update_user]
+DEBUG http-nio-8084-exec-6 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50012} Result: [17b1769e16ad5bbef9d5f03b355d551e, 00ffba5e7a44d7a71e6f00bee090c2fa, 62154adeb56988df1b1243487f4c8179, 笔记本, 6000.0, 1, 6000.0, 2019-10-17 17:29:56.0, wangjian, 2019-10-17 17:29:56.0, wangjian]
+DEBUG http-nio-8084-exec-6 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50012} closed
+DEBUG http-nio-8084-exec-6 druid.sql.Statement - {conn-10001, pstmt-20002} clearParameters. 
+DEBUG http-nio-8084-exec-6 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50011} closed
+DEBUG http-nio-8084-exec-6 druid.sql.Statement - {conn-10001, pstmt-20001} clearParameters. 
+DEBUG http-nio-8084-exec-6 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-7 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-7 druid.sql.Statement - {conn-10001, pstmt-20001} Parameters : [wangjian]
+DEBUG http-nio-8084-exec-7 druid.sql.Statement - {conn-10001, pstmt-20001} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-7 druid.sql.Statement - {conn-10001, pstmt-20001} executed. 1.208106 millis. SELECT  *  FROM orders_database.orders 
+ 
+ WHERE (create_user = ?)
+DEBUG http-nio-8084-exec-7 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50013} open
+DEBUG http-nio-8084-exec-7 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50013} Header: [id, order_no, order_status, finish_date, delete_date, create_date, create_user, update_date, update_user, amount]
+DEBUG http-nio-8084-exec-7 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50013} Result: [00ffba5e7a44d7a71e6f00bee090c2fa, 1571305399313, 0, null, null, 2019-10-17 17:43:19.0, wangjian, 2019-10-17 17:43:19.0, wangjian, 6000.0]
+DEBUG http-nio-8084-exec-7 druid.sql.Statement - {conn-10001, pstmt-20002} Parameters : []
+DEBUG http-nio-8084-exec-7 druid.sql.Statement - {conn-10001, pstmt-20002} Types : []
+DEBUG http-nio-8084-exec-7 druid.sql.Statement - {conn-10001, pstmt-20002} executed. 0.807631 millis. SELECT * FROM orders_detail
+DEBUG http-nio-8084-exec-7 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50014} open
+DEBUG http-nio-8084-exec-7 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50014} Header: [id, orders_id, commodity_id, commodity_name, price, quantity, amount, create_date, create_user, update_date, update_user]
+DEBUG http-nio-8084-exec-7 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50014} Result: [17b1769e16ad5bbef9d5f03b355d551e, 00ffba5e7a44d7a71e6f00bee090c2fa, 62154adeb56988df1b1243487f4c8179, 笔记本, 6000.0, 1, 6000.0, 2019-10-17 17:29:56.0, wangjian, 2019-10-17 17:29:56.0, wangjian]
+DEBUG http-nio-8084-exec-7 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50014} closed
+DEBUG http-nio-8084-exec-7 druid.sql.Statement - {conn-10001, pstmt-20002} clearParameters. 
+DEBUG http-nio-8084-exec-7 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50013} closed
+DEBUG http-nio-8084-exec-7 druid.sql.Statement - {conn-10001, pstmt-20001} clearParameters. 
+DEBUG http-nio-8084-exec-7 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-8 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-8 druid.sql.Statement - {conn-10001, pstmt-20001} Parameters : [wangjian]
+DEBUG http-nio-8084-exec-8 druid.sql.Statement - {conn-10001, pstmt-20001} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-8 druid.sql.Statement - {conn-10001, pstmt-20001} executed. 1.096975 millis. SELECT  *  FROM orders_database.orders 
+ 
+ WHERE (create_user = ?)
+DEBUG http-nio-8084-exec-8 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50015} open
+DEBUG http-nio-8084-exec-8 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50015} Header: [id, order_no, order_status, finish_date, delete_date, create_date, create_user, update_date, update_user, amount]
+DEBUG http-nio-8084-exec-8 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50015} Result: [00ffba5e7a44d7a71e6f00bee090c2fa, 1571305399313, 0, null, null, 2019-10-17 17:43:19.0, wangjian, 2019-10-17 17:43:19.0, wangjian, 6000.0]
+DEBUG http-nio-8084-exec-8 druid.sql.Statement - {conn-10001, pstmt-20002} Parameters : []
+DEBUG http-nio-8084-exec-8 druid.sql.Statement - {conn-10001, pstmt-20002} Types : []
+DEBUG http-nio-8084-exec-8 druid.sql.Statement - {conn-10001, pstmt-20002} executed. 1.124661 millis. SELECT * FROM orders_detail
+DEBUG http-nio-8084-exec-8 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50016} open
+DEBUG http-nio-8084-exec-8 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50016} Header: [id, orders_id, commodity_id, commodity_name, price, quantity, amount, create_date, create_user, update_date, update_user]
+DEBUG http-nio-8084-exec-8 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50016} Result: [17b1769e16ad5bbef9d5f03b355d551e, 00ffba5e7a44d7a71e6f00bee090c2fa, 62154adeb56988df1b1243487f4c8179, 笔记本, 6000.0, 1, 6000.0, 2019-10-17 17:29:56.0, wangjian, 2019-10-17 17:29:56.0, wangjian]
+DEBUG http-nio-8084-exec-8 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50016} closed
+DEBUG http-nio-8084-exec-8 druid.sql.Statement - {conn-10001, pstmt-20002} clearParameters. 
+DEBUG http-nio-8084-exec-8 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50015} closed
+DEBUG http-nio-8084-exec-8 druid.sql.Statement - {conn-10001, pstmt-20001} clearParameters. 
+DEBUG http-nio-8084-exec-8 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-10 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-10 druid.sql.Statement - {conn-10001, pstmt-20001} Parameters : [wangjian]
+DEBUG http-nio-8084-exec-10 druid.sql.Statement - {conn-10001, pstmt-20001} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-10 druid.sql.Statement - {conn-10001, pstmt-20001} executed. 0.997179 millis. SELECT  *  FROM orders_database.orders 
+ 
+ WHERE (create_user = ?)
+DEBUG http-nio-8084-exec-10 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50017} open
+DEBUG http-nio-8084-exec-10 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50017} Header: [id, order_no, order_status, finish_date, delete_date, create_date, create_user, update_date, update_user, amount]
+DEBUG http-nio-8084-exec-10 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50017} Result: [00ffba5e7a44d7a71e6f00bee090c2fa, 1571305399313, 0, null, null, 2019-10-17 17:43:19.0, wangjian, 2019-10-17 17:43:19.0, wangjian, 6000.0]
+DEBUG http-nio-8084-exec-10 druid.sql.Statement - {conn-10001, pstmt-20002} Parameters : []
+DEBUG http-nio-8084-exec-10 druid.sql.Statement - {conn-10001, pstmt-20002} Types : []
+DEBUG http-nio-8084-exec-10 druid.sql.Statement - {conn-10001, pstmt-20002} executed. 2.382501 millis. SELECT * FROM orders_detail
+DEBUG http-nio-8084-exec-10 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50018} open
+DEBUG http-nio-8084-exec-10 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50018} Header: [id, orders_id, commodity_id, commodity_name, price, quantity, amount, create_date, create_user, update_date, update_user]
+DEBUG http-nio-8084-exec-10 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50018} Result: [17b1769e16ad5bbef9d5f03b355d551e, 00ffba5e7a44d7a71e6f00bee090c2fa, 62154adeb56988df1b1243487f4c8179, 笔记本, 6000.0, 1, 6000.0, 2019-10-17 17:29:56.0, wangjian, 2019-10-17 17:29:56.0, wangjian]
+DEBUG http-nio-8084-exec-10 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50018} closed
+DEBUG http-nio-8084-exec-10 druid.sql.Statement - {conn-10001, pstmt-20002} clearParameters. 
+DEBUG http-nio-8084-exec-10 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50017} closed
+DEBUG http-nio-8084-exec-10 druid.sql.Statement - {conn-10001, pstmt-20001} clearParameters. 
+DEBUG http-nio-8084-exec-10 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-2 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20001} Parameters : [wangjian]
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20001} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20001} executed. 1.086653 millis. SELECT  *  FROM orders_database.orders 
+ 
+ WHERE (create_user = ?)
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50019} open
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50019} Header: [id, order_no, order_status, finish_date, delete_date, create_date, create_user, update_date, update_user, amount]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50019} Result: [00ffba5e7a44d7a71e6f00bee090c2fa, 1571305399313, 0, null, null, 2019-10-17 17:43:19.0, wangjian, 2019-10-17 17:43:19.0, wangjian, 6000.0]
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20002} Parameters : []
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20002} Types : []
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20002} executed. 0.893809 millis. SELECT * FROM orders_detail
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50020} open
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50020} Header: [id, orders_id, commodity_id, commodity_name, price, quantity, amount, create_date, create_user, update_date, update_user]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50020} Result: [17b1769e16ad5bbef9d5f03b355d551e, 00ffba5e7a44d7a71e6f00bee090c2fa, 62154adeb56988df1b1243487f4c8179, 笔记本, 6000.0, 1, 6000.0, 2019-10-17 17:29:56.0, wangjian, 2019-10-17 17:29:56.0, wangjian]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50020} closed
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20002} clearParameters. 
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50019} closed
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20001} clearParameters. 
+DEBUG http-nio-8084-exec-2 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-3 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10001, pstmt-20001} Parameters : [wangjian]
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10001, pstmt-20001} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10001, pstmt-20001} executed. 1.127759 millis. SELECT  *  FROM orders_database.orders 
+ 
+ WHERE (create_user = ?)
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50021} open
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50021} Header: [id, order_no, order_status, finish_date, delete_date, create_date, create_user, update_date, update_user, amount]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50021} Result: [00ffba5e7a44d7a71e6f00bee090c2fa, 1571305399313, 0, null, null, 2019-10-17 17:43:19.0, wangjian, 2019-10-17 17:43:19.0, wangjian, 6000.0]
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10001, pstmt-20002} Parameters : []
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10001, pstmt-20002} Types : []
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10001, pstmt-20002} executed. 0.887104 millis. SELECT * FROM orders_detail
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50022} open
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50022} Header: [id, orders_id, commodity_id, commodity_name, price, quantity, amount, create_date, create_user, update_date, update_user]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50022} Result: [17b1769e16ad5bbef9d5f03b355d551e, 00ffba5e7a44d7a71e6f00bee090c2fa, 62154adeb56988df1b1243487f4c8179, 笔记本, 6000.0, 1, 6000.0, 2019-10-17 17:29:56.0, wangjian, 2019-10-17 17:29:56.0, wangjian]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50022} closed
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10001, pstmt-20002} clearParameters. 
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50021} closed
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10001, pstmt-20001} clearParameters. 
+DEBUG http-nio-8084-exec-3 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-4 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-4 druid.sql.Statement - {conn-10001, pstmt-20001} Parameters : [wangjian]
+DEBUG http-nio-8084-exec-4 druid.sql.Statement - {conn-10001, pstmt-20001} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-4 druid.sql.Statement - {conn-10001, pstmt-20001} executed. 1.048381 millis. SELECT  *  FROM orders_database.orders 
+ 
+ WHERE (create_user = ?)
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50023} open
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50023} Header: [id, order_no, order_status, finish_date, delete_date, create_date, create_user, update_date, update_user, amount]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50023} Result: [00ffba5e7a44d7a71e6f00bee090c2fa, 1571305399313, 0, null, null, 2019-10-17 17:43:19.0, wangjian, 2019-10-17 17:43:19.0, wangjian, 6000.0]
+DEBUG http-nio-8084-exec-4 druid.sql.Statement - {conn-10001, pstmt-20002} Parameters : []
+DEBUG http-nio-8084-exec-4 druid.sql.Statement - {conn-10001, pstmt-20002} Types : []
+DEBUG http-nio-8084-exec-4 druid.sql.Statement - {conn-10001, pstmt-20002} executed. 0.789651 millis. SELECT * FROM orders_detail
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50024} open
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50024} Header: [id, orders_id, commodity_id, commodity_name, price, quantity, amount, create_date, create_user, update_date, update_user]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50024} Result: [17b1769e16ad5bbef9d5f03b355d551e, 00ffba5e7a44d7a71e6f00bee090c2fa, 62154adeb56988df1b1243487f4c8179, 笔记本, 6000.0, 1, 6000.0, 2019-10-17 17:29:56.0, wangjian, 2019-10-17 17:29:56.0, wangjian]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50024} closed
+DEBUG http-nio-8084-exec-4 druid.sql.Statement - {conn-10001, pstmt-20002} clearParameters. 
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50023} closed
+DEBUG http-nio-8084-exec-4 druid.sql.Statement - {conn-10001, pstmt-20001} clearParameters. 
+DEBUG http-nio-8084-exec-4 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-5 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10001, pstmt-20001} Parameters : [wangjian]
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10001, pstmt-20001} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10001, pstmt-20001} executed. 1.086069 millis. SELECT  *  FROM orders_database.orders 
+ 
+ WHERE (create_user = ?)
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50025} open
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50025} Header: [id, order_no, order_status, finish_date, delete_date, create_date, create_user, update_date, update_user, amount]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50025} Result: [00ffba5e7a44d7a71e6f00bee090c2fa, 1571305399313, 0, null, null, 2019-10-17 17:43:19.0, wangjian, 2019-10-17 17:43:19.0, wangjian, 6000.0]
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10001, pstmt-20002} Parameters : []
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10001, pstmt-20002} Types : []
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10001, pstmt-20002} executed. 1.75166 millis. SELECT * FROM orders_detail
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50026} open
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50026} Header: [id, orders_id, commodity_id, commodity_name, price, quantity, amount, create_date, create_user, update_date, update_user]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50026} Result: [17b1769e16ad5bbef9d5f03b355d551e, 00ffba5e7a44d7a71e6f00bee090c2fa, 62154adeb56988df1b1243487f4c8179, 笔记本, 6000.0, 1, 6000.0, 2019-10-17 17:29:56.0, wangjian, 2019-10-17 17:29:56.0, wangjian]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50026} closed
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10001, pstmt-20002} clearParameters. 
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50025} closed
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10001, pstmt-20001} clearParameters. 
+DEBUG http-nio-8084-exec-5 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-6 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-6 druid.sql.Statement - {conn-10001, pstmt-20001} Parameters : [wangjian]
+DEBUG http-nio-8084-exec-6 druid.sql.Statement - {conn-10001, pstmt-20001} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-6 druid.sql.Statement - {conn-10001, pstmt-20001} executed. 1.095073 millis. SELECT  *  FROM orders_database.orders 
+ 
+ WHERE (create_user = ?)
+DEBUG http-nio-8084-exec-6 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50027} open
+DEBUG http-nio-8084-exec-6 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50027} Header: [id, order_no, order_status, finish_date, delete_date, create_date, create_user, update_date, update_user, amount]
+DEBUG http-nio-8084-exec-6 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50027} Result: [00ffba5e7a44d7a71e6f00bee090c2fa, 1571305399313, 0, null, null, 2019-10-17 17:43:19.0, wangjian, 2019-10-17 17:43:19.0, wangjian, 6000.0]
+DEBUG http-nio-8084-exec-6 druid.sql.Statement - {conn-10001, pstmt-20002} Parameters : []
+DEBUG http-nio-8084-exec-6 druid.sql.Statement - {conn-10001, pstmt-20002} Types : []
+DEBUG http-nio-8084-exec-6 druid.sql.Statement - {conn-10001, pstmt-20002} executed. 0.823314 millis. SELECT * FROM orders_detail
+DEBUG http-nio-8084-exec-6 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50028} open
+DEBUG http-nio-8084-exec-6 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50028} Header: [id, orders_id, commodity_id, commodity_name, price, quantity, amount, create_date, create_user, update_date, update_user]
+DEBUG http-nio-8084-exec-6 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50028} Result: [17b1769e16ad5bbef9d5f03b355d551e, 00ffba5e7a44d7a71e6f00bee090c2fa, 62154adeb56988df1b1243487f4c8179, 笔记本, 6000.0, 1, 6000.0, 2019-10-17 17:29:56.0, wangjian, 2019-10-17 17:29:56.0, wangjian]
+DEBUG http-nio-8084-exec-6 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50028} closed
+DEBUG http-nio-8084-exec-6 druid.sql.Statement - {conn-10001, pstmt-20002} clearParameters. 
+DEBUG http-nio-8084-exec-6 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50027} closed
+DEBUG http-nio-8084-exec-6 druid.sql.Statement - {conn-10001, pstmt-20001} clearParameters. 
+DEBUG http-nio-8084-exec-6 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-7 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-7 druid.sql.Statement - {conn-10001, pstmt-20001} Parameters : [wangjian]
+DEBUG http-nio-8084-exec-7 druid.sql.Statement - {conn-10001, pstmt-20001} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-7 druid.sql.Statement - {conn-10001, pstmt-20001} executed. 1.124251 millis. SELECT  *  FROM orders_database.orders 
+ 
+ WHERE (create_user = ?)
+DEBUG http-nio-8084-exec-7 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50029} open
+DEBUG http-nio-8084-exec-7 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50029} Header: [id, order_no, order_status, finish_date, delete_date, create_date, create_user, update_date, update_user, amount]
+DEBUG http-nio-8084-exec-7 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50029} Result: [00ffba5e7a44d7a71e6f00bee090c2fa, 1571305399313, 0, null, null, 2019-10-17 17:43:19.0, wangjian, 2019-10-17 17:43:19.0, wangjian, 6000.0]
+DEBUG http-nio-8084-exec-7 druid.sql.Statement - {conn-10001, pstmt-20002} Parameters : []
+DEBUG http-nio-8084-exec-7 druid.sql.Statement - {conn-10001, pstmt-20002} Types : []
+DEBUG http-nio-8084-exec-7 druid.sql.Statement - {conn-10001, pstmt-20002} executed. 0.89113 millis. SELECT * FROM orders_detail
+DEBUG http-nio-8084-exec-7 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50030} open
+DEBUG http-nio-8084-exec-7 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50030} Header: [id, orders_id, commodity_id, commodity_name, price, quantity, amount, create_date, create_user, update_date, update_user]
+DEBUG http-nio-8084-exec-7 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50030} Result: [17b1769e16ad5bbef9d5f03b355d551e, 00ffba5e7a44d7a71e6f00bee090c2fa, 62154adeb56988df1b1243487f4c8179, 笔记本, 6000.0, 1, 6000.0, 2019-10-17 17:29:56.0, wangjian, 2019-10-17 17:29:56.0, wangjian]
+DEBUG http-nio-8084-exec-7 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50030} closed
+DEBUG http-nio-8084-exec-7 druid.sql.Statement - {conn-10001, pstmt-20002} clearParameters. 
+DEBUG http-nio-8084-exec-7 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50029} closed
+DEBUG http-nio-8084-exec-7 druid.sql.Statement - {conn-10001, pstmt-20001} clearParameters. 
+DEBUG http-nio-8084-exec-7 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-8 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-8 druid.sql.Statement - {conn-10001, pstmt-20001} Parameters : [wangjian]
+DEBUG http-nio-8084-exec-8 druid.sql.Statement - {conn-10001, pstmt-20001} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-8 druid.sql.Statement - {conn-10001, pstmt-20001} executed. 1.039541 millis. SELECT  *  FROM orders_database.orders 
+ 
+ WHERE (create_user = ?)
+DEBUG http-nio-8084-exec-8 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50031} open
+DEBUG http-nio-8084-exec-8 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50031} Header: [id, order_no, order_status, finish_date, delete_date, create_date, create_user, update_date, update_user, amount]
+DEBUG http-nio-8084-exec-8 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50031} Result: [00ffba5e7a44d7a71e6f00bee090c2fa, 1571305399313, 0, null, null, 2019-10-17 17:43:19.0, wangjian, 2019-10-17 17:43:19.0, wangjian, 6000.0]
+DEBUG http-nio-8084-exec-8 druid.sql.Statement - {conn-10001, pstmt-20002} Parameters : []
+DEBUG http-nio-8084-exec-8 druid.sql.Statement - {conn-10001, pstmt-20002} Types : []
+DEBUG http-nio-8084-exec-8 druid.sql.Statement - {conn-10001, pstmt-20002} executed. 1.220763 millis. SELECT * FROM orders_detail
+DEBUG http-nio-8084-exec-8 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50032} open
+DEBUG http-nio-8084-exec-8 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50032} Header: [id, orders_id, commodity_id, commodity_name, price, quantity, amount, create_date, create_user, update_date, update_user]
+DEBUG http-nio-8084-exec-8 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50032} Result: [17b1769e16ad5bbef9d5f03b355d551e, 00ffba5e7a44d7a71e6f00bee090c2fa, 62154adeb56988df1b1243487f4c8179, 笔记本, 6000.0, 1, 6000.0, 2019-10-17 17:29:56.0, wangjian, 2019-10-17 17:29:56.0, wangjian]
+DEBUG http-nio-8084-exec-8 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50032} closed
+DEBUG http-nio-8084-exec-8 druid.sql.Statement - {conn-10001, pstmt-20002} clearParameters. 
+DEBUG http-nio-8084-exec-8 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50031} closed
+DEBUG http-nio-8084-exec-8 druid.sql.Statement - {conn-10001, pstmt-20001} clearParameters. 
+DEBUG http-nio-8084-exec-8 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-9 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-9 druid.sql.Statement - {conn-10001, pstmt-20001} Parameters : [wangjian]
+DEBUG http-nio-8084-exec-9 druid.sql.Statement - {conn-10001, pstmt-20001} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-9 druid.sql.Statement - {conn-10001, pstmt-20001} executed. 1.087198 millis. SELECT  *  FROM orders_database.orders 
+ 
+ WHERE (create_user = ?)
+DEBUG http-nio-8084-exec-9 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50033} open
+DEBUG http-nio-8084-exec-9 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50033} Header: [id, order_no, order_status, finish_date, delete_date, create_date, create_user, update_date, update_user, amount]
+DEBUG http-nio-8084-exec-9 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50033} Result: [00ffba5e7a44d7a71e6f00bee090c2fa, 1571305399313, 0, null, null, 2019-10-17 17:43:19.0, wangjian, 2019-10-17 17:43:19.0, wangjian, 6000.0]
+DEBUG http-nio-8084-exec-9 druid.sql.Statement - {conn-10001, pstmt-20002} Parameters : []
+DEBUG http-nio-8084-exec-9 druid.sql.Statement - {conn-10001, pstmt-20002} Types : []
+DEBUG http-nio-8084-exec-9 druid.sql.Statement - {conn-10001, pstmt-20002} executed. 1.652213 millis. SELECT * FROM orders_detail
+DEBUG http-nio-8084-exec-9 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50034} open
+DEBUG http-nio-8084-exec-9 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50034} Header: [id, orders_id, commodity_id, commodity_name, price, quantity, amount, create_date, create_user, update_date, update_user]
+DEBUG http-nio-8084-exec-9 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50034} Result: [17b1769e16ad5bbef9d5f03b355d551e, 00ffba5e7a44d7a71e6f00bee090c2fa, 62154adeb56988df1b1243487f4c8179, 笔记本, 6000.0, 1, 6000.0, 2019-10-17 17:29:56.0, wangjian, 2019-10-17 17:29:56.0, wangjian]
+DEBUG http-nio-8084-exec-9 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50034} closed
+DEBUG http-nio-8084-exec-9 druid.sql.Statement - {conn-10001, pstmt-20002} clearParameters. 
+DEBUG http-nio-8084-exec-9 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50033} closed
+DEBUG http-nio-8084-exec-9 druid.sql.Statement - {conn-10001, pstmt-20001} clearParameters. 
+DEBUG http-nio-8084-exec-9 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-10 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-10 druid.sql.Statement - {conn-10001, pstmt-20001} Parameters : [wangjian]
+DEBUG http-nio-8084-exec-10 druid.sql.Statement - {conn-10001, pstmt-20001} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-10 druid.sql.Statement - {conn-10001, pstmt-20001} executed. 1.172139 millis. SELECT  *  FROM orders_database.orders 
+ 
+ WHERE (create_user = ?)
+DEBUG http-nio-8084-exec-10 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50035} open
+DEBUG http-nio-8084-exec-10 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50035} Header: [id, order_no, order_status, finish_date, delete_date, create_date, create_user, update_date, update_user, amount]
+DEBUG http-nio-8084-exec-10 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50035} Result: [00ffba5e7a44d7a71e6f00bee090c2fa, 1571305399313, 0, null, null, 2019-10-17 17:43:19.0, wangjian, 2019-10-17 17:43:19.0, wangjian, 6000.0]
+DEBUG http-nio-8084-exec-10 druid.sql.Statement - {conn-10001, pstmt-20002} Parameters : []
+DEBUG http-nio-8084-exec-10 druid.sql.Statement - {conn-10001, pstmt-20002} Types : []
+DEBUG http-nio-8084-exec-10 druid.sql.Statement - {conn-10001, pstmt-20002} executed. 2.194315 millis. SELECT * FROM orders_detail
+DEBUG http-nio-8084-exec-10 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50036} open
+DEBUG http-nio-8084-exec-10 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50036} Header: [id, orders_id, commodity_id, commodity_name, price, quantity, amount, create_date, create_user, update_date, update_user]
+DEBUG http-nio-8084-exec-10 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50036} Result: [17b1769e16ad5bbef9d5f03b355d551e, 00ffba5e7a44d7a71e6f00bee090c2fa, 62154adeb56988df1b1243487f4c8179, 笔记本, 6000.0, 1, 6000.0, 2019-10-17 17:29:56.0, wangjian, 2019-10-17 17:29:56.0, wangjian]
+DEBUG http-nio-8084-exec-10 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50036} closed
+DEBUG http-nio-8084-exec-10 druid.sql.Statement - {conn-10001, pstmt-20002} clearParameters. 
+DEBUG http-nio-8084-exec-10 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50035} closed
+DEBUG http-nio-8084-exec-10 druid.sql.Statement - {conn-10001, pstmt-20001} clearParameters. 
+DEBUG http-nio-8084-exec-10 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-1 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20001} Parameters : [wangjian]
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20001} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20001} executed. 1.315412 millis. SELECT  *  FROM orders_database.orders 
+ 
+ WHERE (create_user = ?)
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50037} open
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50037} Header: [id, order_no, order_status, finish_date, delete_date, create_date, create_user, update_date, update_user, amount]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50037} Result: [00ffba5e7a44d7a71e6f00bee090c2fa, 1571305399313, 0, null, null, 2019-10-17 17:43:19.0, wangjian, 2019-10-17 17:43:19.0, wangjian, 6000.0]
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20002} Parameters : []
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20002} Types : []
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20002} executed. 0.717262 millis. SELECT * FROM orders_detail
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50038} open
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50038} Header: [id, orders_id, commodity_id, commodity_name, price, quantity, amount, create_date, create_user, update_date, update_user]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50038} Result: [17b1769e16ad5bbef9d5f03b355d551e, 00ffba5e7a44d7a71e6f00bee090c2fa, 62154adeb56988df1b1243487f4c8179, 笔记本, 6000.0, 1, 6000.0, 2019-10-17 17:29:56.0, wangjian, 2019-10-17 17:29:56.0, wangjian]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50038} closed
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20002} clearParameters. 
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50037} closed
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20001} clearParameters. 
+DEBUG http-nio-8084-exec-1 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-2 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20001} Parameters : [wangjian]
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20001} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20001} executed. 1.083531 millis. SELECT  *  FROM orders_database.orders 
+ 
+ WHERE (create_user = ?)
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50039} open
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50039} Header: [id, order_no, order_status, finish_date, delete_date, create_date, create_user, update_date, update_user, amount]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50039} Result: [00ffba5e7a44d7a71e6f00bee090c2fa, 1571305399313, 0, null, null, 2019-10-17 17:43:19.0, wangjian, 2019-10-17 17:43:19.0, wangjian, 6000.0]
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20002} Parameters : []
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20002} Types : []
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20002} executed. 0.772936 millis. SELECT * FROM orders_detail
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50040} open
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50040} Header: [id, orders_id, commodity_id, commodity_name, price, quantity, amount, create_date, create_user, update_date, update_user]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50040} Result: [17b1769e16ad5bbef9d5f03b355d551e, 00ffba5e7a44d7a71e6f00bee090c2fa, 62154adeb56988df1b1243487f4c8179, 笔记本, 6000.0, 1, 6000.0, 2019-10-17 17:29:56.0, wangjian, 2019-10-17 17:29:56.0, wangjian]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50040} closed
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20002} clearParameters. 
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50039} closed
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20001} clearParameters. 
+DEBUG http-nio-8084-exec-2 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-3 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10001, pstmt-20001} Parameters : [wangjian]
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10001, pstmt-20001} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10001, pstmt-20001} executed. 1.072693 millis. SELECT  *  FROM orders_database.orders 
+ 
+ WHERE (create_user = ?)
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50041} open
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50041} Header: [id, order_no, order_status, finish_date, delete_date, create_date, create_user, update_date, update_user, amount]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50041} Result: [00ffba5e7a44d7a71e6f00bee090c2fa, 1571305399313, 0, null, null, 2019-10-17 17:43:19.0, wangjian, 2019-10-17 17:43:19.0, wangjian, 6000.0]
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10001, pstmt-20002} Parameters : []
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10001, pstmt-20002} Types : []
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10001, pstmt-20002} executed. 0.720344 millis. SELECT * FROM orders_detail
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50042} open
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50042} Header: [id, orders_id, commodity_id, commodity_name, price, quantity, amount, create_date, create_user, update_date, update_user]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50042} Result: [17b1769e16ad5bbef9d5f03b355d551e, 00ffba5e7a44d7a71e6f00bee090c2fa, 62154adeb56988df1b1243487f4c8179, 笔记本, 6000.0, 1, 6000.0, 2019-10-17 17:29:56.0, wangjian, 2019-10-17 17:29:56.0, wangjian]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50042} closed
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10001, pstmt-20002} clearParameters. 
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50041} closed
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10001, pstmt-20001} clearParameters. 
+DEBUG http-nio-8084-exec-3 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-5 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10001, pstmt-20001} Parameters : [wangjian]
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10001, pstmt-20001} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10001, pstmt-20001} executed. 0.904812 millis. SELECT  *  FROM orders_database.orders 
+ 
+ WHERE (create_user = ?)
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50043} open
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50043} Header: [id, order_no, order_status, finish_date, delete_date, create_date, create_user, update_date, update_user, amount]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50043} Result: [00ffba5e7a44d7a71e6f00bee090c2fa, 1571305399313, 0, null, null, 2019-10-17 17:43:19.0, wangjian, 2019-10-17 17:43:19.0, wangjian, 6000.0]
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10001, pstmt-20002} Parameters : []
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10001, pstmt-20002} Types : []
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10001, pstmt-20002} executed. 0.791815 millis. SELECT * FROM orders_detail
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50044} open
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50044} Header: [id, orders_id, commodity_id, commodity_name, price, quantity, amount, create_date, create_user, update_date, update_user]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50044} Result: [17b1769e16ad5bbef9d5f03b355d551e, 00ffba5e7a44d7a71e6f00bee090c2fa, 62154adeb56988df1b1243487f4c8179, 笔记本, 6000.0, 1, 6000.0, 2019-10-17 17:29:56.0, wangjian, 2019-10-17 17:29:56.0, wangjian]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50044} closed
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10001, pstmt-20002} clearParameters. 
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50043} closed
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10001, pstmt-20001} clearParameters. 
+DEBUG http-nio-8084-exec-5 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-6 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-6 druid.sql.Statement - {conn-10001, pstmt-20001} Parameters : [wangjian]
+DEBUG http-nio-8084-exec-6 druid.sql.Statement - {conn-10001, pstmt-20001} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-6 druid.sql.Statement - {conn-10001, pstmt-20001} executed. 1.006084 millis. SELECT  *  FROM orders_database.orders 
+ 
+ WHERE (create_user = ?)
+DEBUG http-nio-8084-exec-6 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50045} open
+DEBUG http-nio-8084-exec-6 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50045} Header: [id, order_no, order_status, finish_date, delete_date, create_date, create_user, update_date, update_user, amount]
+DEBUG http-nio-8084-exec-6 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50045} Result: [00ffba5e7a44d7a71e6f00bee090c2fa, 1571305399313, 0, null, null, 2019-10-17 17:43:19.0, wangjian, 2019-10-17 17:43:19.0, wangjian, 6000.0]
+DEBUG http-nio-8084-exec-6 druid.sql.Statement - {conn-10001, pstmt-20002} Parameters : []
+DEBUG http-nio-8084-exec-6 druid.sql.Statement - {conn-10001, pstmt-20002} Types : []
+DEBUG http-nio-8084-exec-6 druid.sql.Statement - {conn-10001, pstmt-20002} executed. 0.83442 millis. SELECT * FROM orders_detail
+DEBUG http-nio-8084-exec-6 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50046} open
+DEBUG http-nio-8084-exec-6 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50046} Header: [id, orders_id, commodity_id, commodity_name, price, quantity, amount, create_date, create_user, update_date, update_user]
+DEBUG http-nio-8084-exec-6 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50046} Result: [17b1769e16ad5bbef9d5f03b355d551e, 00ffba5e7a44d7a71e6f00bee090c2fa, 62154adeb56988df1b1243487f4c8179, 笔记本, 6000.0, 1, 6000.0, 2019-10-17 17:29:56.0, wangjian, 2019-10-17 17:29:56.0, wangjian]
+DEBUG http-nio-8084-exec-6 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50046} closed
+DEBUG http-nio-8084-exec-6 druid.sql.Statement - {conn-10001, pstmt-20002} clearParameters. 
+DEBUG http-nio-8084-exec-6 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50045} closed
+DEBUG http-nio-8084-exec-6 druid.sql.Statement - {conn-10001, pstmt-20001} clearParameters. 
+DEBUG http-nio-8084-exec-6 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-7 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-7 druid.sql.Statement - {conn-10001, pstmt-20001} Parameters : [wangjian]
+DEBUG http-nio-8084-exec-7 druid.sql.Statement - {conn-10001, pstmt-20001} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-7 druid.sql.Statement - {conn-10001, pstmt-20001} executed. 2.138943 millis. SELECT  *  FROM orders_database.orders 
+ 
+ WHERE (create_user = ?)
+DEBUG http-nio-8084-exec-7 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50047} open
+DEBUG http-nio-8084-exec-7 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50047} Header: [id, order_no, order_status, finish_date, delete_date, create_date, create_user, update_date, update_user, amount]
+DEBUG http-nio-8084-exec-7 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50047} Result: [00ffba5e7a44d7a71e6f00bee090c2fa, 1571305399313, 0, null, null, 2019-10-17 17:43:19.0, wangjian, 2019-10-17 17:43:19.0, wangjian, 6000.0]
+DEBUG http-nio-8084-exec-7 druid.sql.Statement - {conn-10001, pstmt-20002} Parameters : []
+DEBUG http-nio-8084-exec-7 druid.sql.Statement - {conn-10001, pstmt-20002} Types : []
+DEBUG http-nio-8084-exec-7 druid.sql.Statement - {conn-10001, pstmt-20002} executed. 0.890083 millis. SELECT * FROM orders_detail
+DEBUG http-nio-8084-exec-7 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50048} open
+DEBUG http-nio-8084-exec-7 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50048} Header: [id, orders_id, commodity_id, commodity_name, price, quantity, amount, create_date, create_user, update_date, update_user]
+DEBUG http-nio-8084-exec-7 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50048} Result: [17b1769e16ad5bbef9d5f03b355d551e, 00ffba5e7a44d7a71e6f00bee090c2fa, 62154adeb56988df1b1243487f4c8179, 笔记本, 6000.0, 1, 6000.0, 2019-10-17 17:29:56.0, wangjian, 2019-10-17 17:29:56.0, wangjian]
+DEBUG http-nio-8084-exec-7 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50048} closed
+DEBUG http-nio-8084-exec-7 druid.sql.Statement - {conn-10001, pstmt-20002} clearParameters. 
+DEBUG http-nio-8084-exec-7 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50047} closed
+DEBUG http-nio-8084-exec-7 druid.sql.Statement - {conn-10001, pstmt-20001} clearParameters. 
+DEBUG http-nio-8084-exec-7 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-8 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-8 druid.sql.Statement - {conn-10001, pstmt-20001} Parameters : [wangjian]
+DEBUG http-nio-8084-exec-8 druid.sql.Statement - {conn-10001, pstmt-20001} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-8 druid.sql.Statement - {conn-10001, pstmt-20001} executed. 1.162595 millis. SELECT  *  FROM orders_database.orders 
+ 
+ WHERE (create_user = ?)
+DEBUG http-nio-8084-exec-8 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50049} open
+DEBUG http-nio-8084-exec-8 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50049} Header: [id, order_no, order_status, finish_date, delete_date, create_date, create_user, update_date, update_user, amount]
+DEBUG http-nio-8084-exec-8 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50049} Result: [00ffba5e7a44d7a71e6f00bee090c2fa, 1571305399313, 0, null, null, 2019-10-17 17:43:19.0, wangjian, 2019-10-17 17:43:19.0, wangjian, 6000.0]
+DEBUG http-nio-8084-exec-8 druid.sql.Statement - {conn-10001, pstmt-20002} Parameters : []
+DEBUG http-nio-8084-exec-8 druid.sql.Statement - {conn-10001, pstmt-20002} Types : []
+DEBUG http-nio-8084-exec-8 druid.sql.Statement - {conn-10001, pstmt-20002} executed. 0.914054 millis. SELECT * FROM orders_detail
+DEBUG http-nio-8084-exec-8 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50050} open
+DEBUG http-nio-8084-exec-8 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50050} Header: [id, orders_id, commodity_id, commodity_name, price, quantity, amount, create_date, create_user, update_date, update_user]
+DEBUG http-nio-8084-exec-8 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50050} Result: [17b1769e16ad5bbef9d5f03b355d551e, 00ffba5e7a44d7a71e6f00bee090c2fa, 62154adeb56988df1b1243487f4c8179, 笔记本, 6000.0, 1, 6000.0, 2019-10-17 17:29:56.0, wangjian, 2019-10-17 17:29:56.0, wangjian]
+DEBUG http-nio-8084-exec-8 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50050} closed
+DEBUG http-nio-8084-exec-8 druid.sql.Statement - {conn-10001, pstmt-20002} clearParameters. 
+DEBUG http-nio-8084-exec-8 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50049} closed
+DEBUG http-nio-8084-exec-8 druid.sql.Statement - {conn-10001, pstmt-20001} clearParameters. 
+DEBUG http-nio-8084-exec-8 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-9 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-9 druid.sql.Statement - {conn-10001, pstmt-20001} Parameters : [wangjian]
+DEBUG http-nio-8084-exec-9 druid.sql.Statement - {conn-10001, pstmt-20001} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-9 druid.sql.Statement - {conn-10001, pstmt-20001} executed. 3.863512 millis. SELECT  *  FROM orders_database.orders 
+ 
+ WHERE (create_user = ?)
+DEBUG http-nio-8084-exec-9 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50051} open
+DEBUG http-nio-8084-exec-9 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50051} Header: [id, order_no, order_status, finish_date, delete_date, create_date, create_user, update_date, update_user, amount]
+DEBUG http-nio-8084-exec-9 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50051} Result: [00ffba5e7a44d7a71e6f00bee090c2fa, 1571305399313, 0, null, null, 2019-10-17 17:43:19.0, wangjian, 2019-10-17 17:43:19.0, wangjian, 6000.0]
+DEBUG http-nio-8084-exec-9 druid.sql.Statement - {conn-10001, pstmt-20002} Parameters : []
+DEBUG http-nio-8084-exec-9 druid.sql.Statement - {conn-10001, pstmt-20002} Types : []
+DEBUG http-nio-8084-exec-9 druid.sql.Statement - {conn-10001, pstmt-20002} executed. 0.699055 millis. SELECT * FROM orders_detail
+DEBUG http-nio-8084-exec-9 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50052} open
+DEBUG http-nio-8084-exec-9 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50052} Header: [id, orders_id, commodity_id, commodity_name, price, quantity, amount, create_date, create_user, update_date, update_user]
+DEBUG http-nio-8084-exec-9 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50052} Result: [17b1769e16ad5bbef9d5f03b355d551e, 00ffba5e7a44d7a71e6f00bee090c2fa, 62154adeb56988df1b1243487f4c8179, 笔记本, 6000.0, 1, 6000.0, 2019-10-17 17:29:56.0, wangjian, 2019-10-17 17:29:56.0, wangjian]
+DEBUG http-nio-8084-exec-9 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50052} closed
+DEBUG http-nio-8084-exec-9 druid.sql.Statement - {conn-10001, pstmt-20002} clearParameters. 
+DEBUG http-nio-8084-exec-9 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50051} closed
+DEBUG http-nio-8084-exec-9 druid.sql.Statement - {conn-10001, pstmt-20001} clearParameters. 
+DEBUG http-nio-8084-exec-9 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-10 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-10 druid.sql.Statement - {conn-10001, pstmt-20001} Parameters : [wangjian]
+DEBUG http-nio-8084-exec-10 druid.sql.Statement - {conn-10001, pstmt-20001} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-10 druid.sql.Statement - {conn-10001, pstmt-20001} executed. 1.130523 millis. SELECT  *  FROM orders_database.orders 
+ 
+ WHERE (create_user = ?)
+DEBUG http-nio-8084-exec-10 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50053} open
+DEBUG http-nio-8084-exec-10 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50053} Header: [id, order_no, order_status, finish_date, delete_date, create_date, create_user, update_date, update_user, amount]
+DEBUG http-nio-8084-exec-10 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50053} Result: [00ffba5e7a44d7a71e6f00bee090c2fa, 1571305399313, 0, null, null, 2019-10-17 17:43:19.0, wangjian, 2019-10-17 17:43:19.0, wangjian, 6000.0]
+DEBUG http-nio-8084-exec-10 druid.sql.Statement - {conn-10001, pstmt-20002} Parameters : []
+DEBUG http-nio-8084-exec-10 druid.sql.Statement - {conn-10001, pstmt-20002} Types : []
+DEBUG http-nio-8084-exec-10 druid.sql.Statement - {conn-10001, pstmt-20002} executed. 0.816512 millis. SELECT * FROM orders_detail
+DEBUG http-nio-8084-exec-10 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50054} open
+DEBUG http-nio-8084-exec-10 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50054} Header: [id, orders_id, commodity_id, commodity_name, price, quantity, amount, create_date, create_user, update_date, update_user]
+DEBUG http-nio-8084-exec-10 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50054} Result: [17b1769e16ad5bbef9d5f03b355d551e, 00ffba5e7a44d7a71e6f00bee090c2fa, 62154adeb56988df1b1243487f4c8179, 笔记本, 6000.0, 1, 6000.0, 2019-10-17 17:29:56.0, wangjian, 2019-10-17 17:29:56.0, wangjian]
+DEBUG http-nio-8084-exec-10 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50054} closed
+DEBUG http-nio-8084-exec-10 druid.sql.Statement - {conn-10001, pstmt-20002} clearParameters. 
+DEBUG http-nio-8084-exec-10 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50053} closed
+DEBUG http-nio-8084-exec-10 druid.sql.Statement - {conn-10001, pstmt-20001} clearParameters. 
+DEBUG http-nio-8084-exec-10 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-1 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20001} Parameters : [wangjian]
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20001} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20001} executed. 2.875009 millis. SELECT  *  FROM orders_database.orders 
+ 
+ WHERE (create_user = ?)
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50055} open
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50055} Header: [id, order_no, order_status, finish_date, delete_date, create_date, create_user, update_date, update_user, amount]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50055} Result: [00ffba5e7a44d7a71e6f00bee090c2fa, 1571305399313, 0, null, null, 2019-10-17 17:43:19.0, wangjian, 2019-10-17 17:43:19.0, wangjian, 6000.0]
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20002} Parameters : []
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20002} Types : []
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20002} executed. 1.408888 millis. SELECT * FROM orders_detail
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50056} open
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50056} Header: [id, orders_id, commodity_id, commodity_name, price, quantity, amount, create_date, create_user, update_date, update_user]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50056} Result: [17b1769e16ad5bbef9d5f03b355d551e, 00ffba5e7a44d7a71e6f00bee090c2fa, 62154adeb56988df1b1243487f4c8179, 笔记本, 6000.0, 1, 6000.0, 2019-10-17 17:29:56.0, wangjian, 2019-10-17 17:29:56.0, wangjian]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50056} closed
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20002} clearParameters. 
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50055} closed
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20001} clearParameters. 
+DEBUG http-nio-8084-exec-1 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-2 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20001} Parameters : [wangjian]
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20001} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20001} executed. 4.019235 millis. SELECT  *  FROM orders_database.orders 
+ 
+ WHERE (create_user = ?)
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50057} open
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50057} Header: [id, order_no, order_status, finish_date, delete_date, create_date, create_user, update_date, update_user, amount]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50057} Result: [00ffba5e7a44d7a71e6f00bee090c2fa, 1571305399313, 0, null, null, 2019-10-17 17:43:19.0, wangjian, 2019-10-17 17:43:19.0, wangjian, 6000.0]
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20002} Parameters : []
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20002} Types : []
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20002} executed. 1.116627 millis. SELECT * FROM orders_detail
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50058} open
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50058} Header: [id, orders_id, commodity_id, commodity_name, price, quantity, amount, create_date, create_user, update_date, update_user]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50058} Result: [17b1769e16ad5bbef9d5f03b355d551e, 00ffba5e7a44d7a71e6f00bee090c2fa, 62154adeb56988df1b1243487f4c8179, 笔记本, 6000.0, 1, 6000.0, 2019-10-17 17:29:56.0, wangjian, 2019-10-17 17:29:56.0, wangjian]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50058} closed
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20002} clearParameters. 
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50057} closed
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20001} clearParameters. 
+DEBUG http-nio-8084-exec-2 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-3 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10001, pstmt-20001} Parameters : [wangjian]
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10001, pstmt-20001} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10001, pstmt-20001} executed. 1.054642 millis. SELECT  *  FROM orders_database.orders 
+ 
+ WHERE (create_user = ?)
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50059} open
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50059} Header: [id, order_no, order_status, finish_date, delete_date, create_date, create_user, update_date, update_user, amount]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50059} Result: [00ffba5e7a44d7a71e6f00bee090c2fa, 1571305399313, 0, null, null, 2019-10-17 17:43:19.0, wangjian, 2019-10-17 17:43:19.0, wangjian, 6000.0]
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10001, pstmt-20002} Parameters : []
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10001, pstmt-20002} Types : []
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10001, pstmt-20002} executed. 0.675713 millis. SELECT * FROM orders_detail
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50060} open
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50060} Header: [id, orders_id, commodity_id, commodity_name, price, quantity, amount, create_date, create_user, update_date, update_user]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50060} Result: [17b1769e16ad5bbef9d5f03b355d551e, 00ffba5e7a44d7a71e6f00bee090c2fa, 62154adeb56988df1b1243487f4c8179, 笔记本, 6000.0, 1, 6000.0, 2019-10-17 17:29:56.0, wangjian, 2019-10-17 17:29:56.0, wangjian]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50060} closed
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10001, pstmt-20002} clearParameters. 
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50059} closed
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10001, pstmt-20001} clearParameters. 
+DEBUG http-nio-8084-exec-3 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-4 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-4 druid.sql.Statement - {conn-10001, pstmt-20001} Parameters : [wangjian]
+DEBUG http-nio-8084-exec-4 druid.sql.Statement - {conn-10001, pstmt-20001} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-4 druid.sql.Statement - {conn-10001, pstmt-20001} executed. 1.818171 millis. SELECT  *  FROM orders_database.orders 
+ 
+ WHERE (create_user = ?)
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50061} open
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50061} Header: [id, order_no, order_status, finish_date, delete_date, create_date, create_user, update_date, update_user, amount]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50061} Result: [00ffba5e7a44d7a71e6f00bee090c2fa, 1571305399313, 0, null, null, 2019-10-17 17:43:19.0, wangjian, 2019-10-17 17:43:19.0, wangjian, 6000.0]
+DEBUG http-nio-8084-exec-4 druid.sql.Statement - {conn-10001, pstmt-20002} Parameters : []
+DEBUG http-nio-8084-exec-4 druid.sql.Statement - {conn-10001, pstmt-20002} Types : []
+DEBUG http-nio-8084-exec-4 druid.sql.Statement - {conn-10001, pstmt-20002} executed. 1.530894 millis. SELECT * FROM orders_detail
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50062} open
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50062} Header: [id, orders_id, commodity_id, commodity_name, price, quantity, amount, create_date, create_user, update_date, update_user]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50062} Result: [17b1769e16ad5bbef9d5f03b355d551e, 00ffba5e7a44d7a71e6f00bee090c2fa, 62154adeb56988df1b1243487f4c8179, 笔记本, 6000.0, 1, 6000.0, 2019-10-17 17:29:56.0, wangjian, 2019-10-17 17:29:56.0, wangjian]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50062} closed
+DEBUG http-nio-8084-exec-4 druid.sql.Statement - {conn-10001, pstmt-20002} clearParameters. 
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50061} closed
+DEBUG http-nio-8084-exec-4 druid.sql.Statement - {conn-10001, pstmt-20001} clearParameters. 
+DEBUG http-nio-8084-exec-4 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-5 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10001, pstmt-20001} Parameters : [wangjian]
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10001, pstmt-20001} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10001, pstmt-20001} executed. 1.605184 millis. SELECT  *  FROM orders_database.orders 
+ 
+ WHERE (create_user = ?)
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50063} open
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50063} Header: [id, order_no, order_status, finish_date, delete_date, create_date, create_user, update_date, update_user, amount]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50063} Result: [00ffba5e7a44d7a71e6f00bee090c2fa, 1571305399313, 0, null, null, 2019-10-17 17:43:19.0, wangjian, 2019-10-17 17:43:19.0, wangjian, 6000.0]
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10001, pstmt-20002} Parameters : []
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10001, pstmt-20002} Types : []
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10001, pstmt-20002} executed. 2.953472 millis. SELECT * FROM orders_detail
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50064} open
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50064} Header: [id, orders_id, commodity_id, commodity_name, price, quantity, amount, create_date, create_user, update_date, update_user]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50064} Result: [17b1769e16ad5bbef9d5f03b355d551e, 00ffba5e7a44d7a71e6f00bee090c2fa, 62154adeb56988df1b1243487f4c8179, 笔记本, 6000.0, 1, 6000.0, 2019-10-17 17:29:56.0, wangjian, 2019-10-17 17:29:56.0, wangjian]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50064} closed
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10001, pstmt-20002} clearParameters. 
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50063} closed
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10001, pstmt-20001} clearParameters. 
+DEBUG http-nio-8084-exec-5 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-6 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-6 druid.sql.Statement - {conn-10001, pstmt-20001} Parameters : [wangjian]
+DEBUG http-nio-8084-exec-6 druid.sql.Statement - {conn-10001, pstmt-20001} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-6 druid.sql.Statement - {conn-10001, pstmt-20001} executed. 3.168876 millis. SELECT  *  FROM orders_database.orders 
+ 
+ WHERE (create_user = ?)
+DEBUG http-nio-8084-exec-6 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50065} open
+DEBUG http-nio-8084-exec-6 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50065} Header: [id, order_no, order_status, finish_date, delete_date, create_date, create_user, update_date, update_user, amount]
+DEBUG http-nio-8084-exec-6 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50065} Result: [00ffba5e7a44d7a71e6f00bee090c2fa, 1571305399313, 0, null, null, 2019-10-17 17:43:19.0, wangjian, 2019-10-17 17:43:19.0, wangjian, 6000.0]
