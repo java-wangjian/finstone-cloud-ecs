@@ -1,5 +1,0 @@
-# Project exclude paths
-/ecs-commodity/target/
-/ecs-eureka/target/
-/ecs-order/target/
-/ecs-user/target/
