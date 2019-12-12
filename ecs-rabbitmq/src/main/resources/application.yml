@@ -7,5 +7,11 @@ spring:
     port: 5672
     username: wangjian
     password: 1234qwer
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
 #    publisher-confirms: true
 #    virtual-host: /
+#logging:
+#  config: classpath:log4j.properties
