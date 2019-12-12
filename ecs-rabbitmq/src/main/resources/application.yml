@@ -3,9 +3,9 @@ server:
 
 spring:
   rabbitmq:
-    host: 127.0.0.1
+    host: 172.16.1.175
     port: 5672
     username: wangjian
     password: 1234qwer
-    publisher-confirms: true
-    virtual-host: /
+#    publisher-confirms: true
+#    virtual-host: /
