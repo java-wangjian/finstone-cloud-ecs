@@ -6,8 +6,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class DirectListener2 {
-	@RabbitListener(queues = "directqueue2")
-	public void displayMail(Mail mail) throws Exception {
-		System.out.println("directqueue2队列监听器2号收到消息"+mail.toString());
-	}
+    @RabbitListener(queues = "directqueue2")
+    public void displayMail(Mail mail) throws Exception {
+        System.out.println("directqueue2队列监听器2号收到消息" + mail.toString());
+    }
 }
