@@ -1,0 +1,226 @@
+<!--
+  ~ =============================================================
+  ~ Copyright (c) 2012 ~ 2019. finstone.com All rights reserved.
+  ~                                           Created by wangjian
+  ~ =============================================================
+  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>commodity</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.min.js"></script>
+
+    <script>
+
+        $(document).ready(function(){
+            var tbody = "";
+            // $.ajaxSettings.crossDomain = true;
+            $.ajax({
+                url:"http://172.16.9.175:8082/commodity",
+                type:"GET",
+                async:true,
+                // data:{page:2,type:1},
+                error:function(error){
+                    console.log(error);
+                },
+                success:function(data){
+                    // console.log(data);
+                    //下面使用each进行遍历
+                    $.each(data, function (n, item) {
+                        // alert(n + ' ' + item);
+                        var trs = "";
+                        trs += "<tr><td id='cid'>" + item.id + "</td><td id='commodityName'>" + item.commodityName
+                            + "</td><td id='commodityStock'>" + item.commodityStock + "</td><td id='commodityPrice'>" + item.commodityPrice
+                            + "</td><td>" + item.createDate + "</td><td>"
+                            + "<input id=\"quantity\" size='2' type=\"text\" name=\"quantity\" value=\"1\">" +
+                            "<a href=\"javascript:void(0);\" onclick=\"buy();\" >添加</a>"
+                            + "</td></tr>";
+                        tbody += trs;
+                    });
+                    $("#project").append(tbody);
+                }
+            });
+
+
+            var tbody2 = "";
+            // $.ajaxSettings.crossDomain = true;
+            var user = "wangjian";
+            $.ajax({
+                url:"http://172.16.9.175:8084/order/orderList/" + user,
+                type:"GET",
+                async:true,
+                // data:{page:2,type:1},
+                error:function(error){
+                    console.log(error);
+                },
+                success:function(data){
+                    console.log(data);
+                    //下面使用each进行遍历
+                    $.each(data, function (n, orders) {
+                        // alert(n + ' ' + orders);
+                        var trs2 = "";
+                        trs2 += "<tr><td id='cid'>" + orders.id + "</td><td id='commodityName'>" + orders.orderNO
+                            + "</td><td id='commodityPrice'>" + orders.createUser
+                            + "</td><td>" + orders.createDate
+                            + "</td><td>" + orders.amount + "</td><td>"
+                            + "<a href=\"javascript:void(0);\" onclick=\"add();\" >购买</a>"
+                            + "</td></tr>";
+                        tbody2 += trs2;
+                    });
+                    $("#project1").append(tbody2);
+                }
+            });
+
+
+        });
+
+        function add(){
+            var commodityId = $("#cid").text();
+            var commodityName = $("#commodityName").text();
+            var price = $("#commodityPrice").text();
+            var quantity = $("#quantity").val();
+
+            var saveData = {"commodityId":commodityId,
+                            "commodityName":commodityName,
+                            "price":price,
+                            "quantity":quantity
+                        };
+
+            alert("购买商品 " + commodityName + " 数量 " + quantity);
+            $.ajax({
+                url:"http://172.16.9.175:8084/order/one",
+                type:"POST",
+                contentType:"application/json",
+                // contentType:"application/x-www-form-urlencoded",
+                datatype:"json",
+                data:JSON.stringify(saveData),
+                success:function(res){
+                    // alert(res);
+                    location.reload();
+                }
+            });
+
+        }
+
+
+        function add(){
+            var commodityId = $("#cid").text();
+            var commodityName = $("#commodityName").text();
+            var price = $("#commodityPrice").text();
+            var quantity = $("#quantity").val();
+
+            var saveData = {"commodityId":commodityId,
+                "commodityName":commodityName,
+                "price":price,
+                "quantity":quantity
+            };
+
+            alert("购买商品 " + commodityName + " 数量 " + quantity);
+            $.ajax({
+                url:"http://172.16.9.175:8084/order/one",
+                type:"POST",
+                contentType:"application/json",
+                // contentType:"application/x-www-form-urlencoded",
+                datatype:"json",
+                data:JSON.stringify(saveData),
+                success:function(res){
+                    // alert(res);
+                    location.reload();
+                }
+            });
+
+        }
+
+        $(function getCategory() {
+
+            var url = "http://172.16.9.175:8083/user";
+            // 使用ajax发起一个GET方法的请求
+            $.get(url,
+                // result参数是后台传过来的category数组
+                function (result) {
+                    // 将返回结果绑定到UI上，这里用到了vue
+                    new Vue({
+                        el:'#div6',
+                        data:{
+                            categories:result,
+                        }
+                    })
+                }
+            )
+        })
+
+
+    </script>
+
+</head>
+<body>
+<div id="div1" style="width:800px;margin:20px auto;text-align: center">
+    <span style="font-size:30px"><b>商品</b></span></div>
+<div id="div2" style="width:800px;margin:20px auto;text-align: center">
+    <table id="project" align='center' border='1' cellspacing='0'>
+        <tr>
+            <td>商品编号</td>
+            <td>商品名称</td>
+            <td>商品库存</td>
+            <td>商品价格(元)</td>
+            <td>上架时间</td>
+            <td>操作</td>
+        </tr>
+
+    </table>
+<!--    <form id="addForm" action="" method="">-->
+<!--        name: <input id="name" name="name"> <br>-->
+<!--    </form>-->
+<!--    <button id="addCategory" type="button" onclick="add()">提交</button>-->
+</div>
+<br>
+<br>
+<div id="div3" style="width:800px;margin:20px auto;text-align: center">
+    <span style="font-size:30px"><b>订单详情</b></span></div>
+<div id="div4" style="width:800px;margin:20px auto;text-align: center">
+    <table id="project1" align='center' border='1' cellspacing='0'>
+        <tr>
+            <td>订单编号</td>
+            <td>订单校验码</td>
+            <td>下但者</td>
+            <td>下但时间</td>
+            <td>订单总价</td>
+            <td>操作</td>
+        </tr>
+
+    </table>
+    <br>
+    <br>
+</div>
+<div id="div5" style="width:800px;margin:20px auto;text-align: center">
+    <span style="font-size:30px"><b>用户</b></span>
+    <br>
+<div id="div6" style="width:800px;margin:20px auto;text-align: center">
+    <table id="project3" align='center' border='1' cellspacing='0'>
+        <tr>
+            <td>用户编号</td>
+            <td>用户名</td>
+            <td>昵称</td>
+            <td>钱</td>
+            <td>操作</td>
+        </tr>
+
+        <tr v-for="category in categories">
+            <td>{{category.id}}</td>
+            <td>{{category.username}}</td>
+            <td>{{category.nickname}}</td>
+            <td>{{category.money}}</td>
+            <td><a class="delete" href="#">删除</a></td>
+        </tr>
+
+    </table>
+    <br>
+    <br>
+</div>
+</body>
+</html>
+
+

@@ -1,0 +1,16 @@
+server:
+  port: 8085
+spring:
+  application:
+    name: ecs-user-center
+eureka:
+  client:
+    service-url:
+      defaultZone: http://172.16.9.175:8761/eureka/
+  instance:
+    prefer-ip-address: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,hystrix.stream

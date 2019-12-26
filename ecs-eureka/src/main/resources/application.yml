@@ -1,0 +1,19 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: ecs-eureka
+eureka:
+  instance:
+    hostname: ecs-eureka
+  client:
+    service-url:
+      defaultZone: http://172.16.9.175:${server.port}/eureka
+    # 是否从其他的服务中心同步服务列表
+    fetch-registry: false
+    # 是否把自己作为服务注册到其他服务注册中心
+    register-with-eureka: false
+  server:
+    # 自我保护模式禁止关闭，默认是开启状态true
+    enable-self-preservation: false

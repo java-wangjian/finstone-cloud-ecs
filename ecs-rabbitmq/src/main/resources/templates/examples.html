@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="keywords" content="文档预览、文档转换、高清文档转换、在线预览、在线阅读、永中DCS、Office文档转换、Office文档查看、Word转PDF、PDF转换" />
+	<meta name="description" content="永中文档在线预览软件（Document Conversion Service，简称DCS）是通过解析常用办公文档的格式，提供不同文档格式间的相互转换，实现常用格式文档的阅读等服务。" />
+	<title>永中文档在线预览DCS</title>
+	<!--<link href="css/css1.css" rel="stylesheet" />-->
+	<link href="img/favicon.ico" rel="shortcut icon" />
+	<link href="js/font-awesome/css/font-awesome.css" rel="stylesheet">
+	<link rel="stylesheet" href="js/jquery-isloading/css/style.css" />
+	<link rel="stylesheet" href="js/jquery-toastmessage/css/jquery.toastmessage.css" />
+	<link rel="stylesheet" href="css/index.css" />
+	<link rel="stylesheet" href="css/jquery.fileupload.css" />
+	<style type="text/css">
+		input[type="text"] {
+			float: left;
+		}
+
+		input[type="text"]~input[type="button"] {
+			float: left;
+		}
+
+		.btn {
+			display: inline-block;
+			padding: 7px 12px;
+			margin-bottom: 0px;
+			font-size: 14px;
+			font-weight: normal;
+			line-height: 1.42857;
+			text-align: center;
+			white-space: nowrap;
+			vertical-align: middle;
+			cursor: pointer;
+			border: 1px solid transparent;
+			border-radius: 0px;
+			-moz-user-: none;
+		}
+
+		.btn-primary {
+			background-color: #7623F1;
+			color: #FFF;
+			border: 1px solid transparent;
+			font-size: 0.9em;
+			height: 2.8em;
+			width: 8em;
+			cursor: pointer;
+			transition: background-color 0.3s ease-in-out 0s;
+		}
+
+		< !-- -->.button {
+			display: inline-block;
+			zoom: 1;
+			/* zoom and *display = ie7 hack for display:inline-block */
+			*display: inline;
+			vertical-align: baseline;
+			margin: 0 2px;
+			outline: none;
+			cursor: pointer;
+			text-align: center;
+			text-decoration: none;
+			font: 14px/100% Arial, Helvetica, sans-serif;
+			padding: .5em 2em .55em;
+			text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+			-webkit-border-radius: .5em;
+			-moz-border-radius: .5em;
+			border-radius: .5em;
+			-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+			-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+			box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+		}
+
+		.button:hover {
+			text-decoration: none;
+		}
+
+		.button:active {
+			position: relative;
+			top: 1px;
+		}
+
+		.bigrounded {
+			-webkit-border-radius: 2em;
+			-moz-border-radius: 2em;
+			border-radius: 2em;
+		}
+
+		.blue {
+			margin-left: 130px;
+			color: #d9eef7;
+			border: solid 1px #0076a3;
+			background: #7623f1;
+			background: -webkit-gradient(linear, left top, left bottom, from(#00adee),
+				to(#7623f1));
+			background: -moz-linear-gradient(top, #00adee, #7623f1);
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00adee',
+				endColorstr='#0078a5');
+		}
+
+		.blue:hover {
+			background: #4c00c7;
+			background: -webkit-gradient(linear, left top, left bottom, from(#0095cc),
+				to(#4c00c7));
+			background: -moz-linear-gradient(top, #0095cc, #4c00c7);
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0095cc',
+				endColorstr='#00678e');
+		}
+
+		.blue:active {
+			color: #80bed6;
+			background: -webkit-gradient(linear, left top, left bottom, from(#0078a5),
+				to(#00adee));
+			background: -moz-linear-gradient(top, #0078a5, #00adee);
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0078a5',
+				endColorstr='#00adee');
+		}
+
+		/*
+上面是按钮*/
+		.result {
+			float: left;
+			color: #444444;
+			font-family: "黑体";
+			display: block;
+			padding: 9.5px;
+			font-size: 14px;
+			line-height: 25px;
+			word-break: break-all;
+			word-wrap: break-word;
+			white-space: pre-wrap;
+			border: 1px solid rgba(0, 0, 0, 0.15);
+			vertical-align: middle;
+		}
+
+		.result img {
+			height: 96px;
+			width: 96px;
+		}
+
+		.result a:link {
+			color: #218CEE;
+			font-size: 14px;
+		}
+
+		.left_code {
+			position: relative;
+			float: left;
+			height: 150px;
+			width: 250px;
+			text-align: center;
+		}
+
+		.right_code {
+			position: relative;
+			float: left;
+			height: 150px;
+			width: 500px;
+			top: 27px;
+			margin-right: 50px;
+		}
+
+		.examples_style {
+			margin: 5px 40px;
+			line-height: 30px;
+			max-height: 30px;
+			white-space: nowrap;
+		}
+
+		/*
+			单选按钮
+			*/
+		label.radio {
+			display: inline-block;
+			height: 24px;
+			width: 24px;
+			position: relative;
+			margin: 0 5px 5px 0;
+			padding: 0;
+			background-color: #cfcfcf;
+			border-radius: 100%;
+			vertical-align: top;
+			box-shadow: 0 1px 15px rgba(0, 0, 0, 0.1) inset, 0 1px 4px rgba(0, 0, 0, 0.1) inset, 1px -1px 2px rgba(0, 0, 0, 0.1);
+			cursor: pointer;
+			transition: all 0.2s ease;
+		}
+
+		label.radio>span.pip {
+			width: 16px;
+			height: 16px;
+			position: absolute;
+			border-radius: 100%;
+			background: blue;
+			top: 4px;
+			left: 4px;
+			box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.3), 0 0 1px rgba(255, 255, 255, 0.4) inset;
+			background-image: linear-gradient(#ffffff 0, #e7e7e7 100%);
+			transform: scale(0, 0);
+			transition: all 0.2s ease;
+		}
+
+		label.radio.on>span.pip {
+			transform: scale(1, 1);
+		}
+
+		label.radio.on {
+			background-color: #7623F1;
+		}
+
+		.document_type {
+			padding: 40px 0px 40px 0px;
+			background: linear-gradient(#E8EEF1, #FFF);
+			border-radius: 10px;
+			border: 2px solid #fff;
+		}
+
+		.border {
+			border: 2px solid #D9D8DC;
+			margin: 0px 40px 0px 40px;
+			border-radius: 12px;
+			display: none;
+		}
+
+		.type_button ul {}
+
+		.type_button ul li {
+			display: block;
+			padding: 0px 40px 0px 40px;
+			float: left;
+			line-height: 40px;
+			height: 40px;
+			margin-left: 20px;
+			border-radius: 5px 5px 0 0;
+			position: relative;
+			background: #E3E4E6;
+		}
+
+		a {
+			text-decoration: none
+		}
+
+		.type_button ul li a {
+			text-decoration: none
+		}
+
+		.type_button {
+			height: 40px;
+		}
+
+		.outcorder {
+			width: 6px;
+			height: 6px;
+			bottom: 0;
+			left: -6px;
+			z-index: 1;
+			background: #E3E4E6;
+			position: absolute;
+		}
+
+		.outcorder1 {
+			width: 6px;
+			height: 6px;
+			bottom: 0;
+			right: -6px;
+			z-index: 1;
+			background: #E3E4E6;
+			position: absolute;
+		}
+
+		.corner {
+			width: 12px;
+			height: 12px;
+			position: absolute;
+			bottom: 0px;
+			z-index: 2;
+			left: -12px;
+			background: #fff;
+			border-radius: 6px
+		}
+
+		.corner1 {
+			right: -12px;
+			width: 12px;
+			height: 12px;
+			position: absolute;
+			bottom: 0px;
+			z-index: 2;
+			background: #fff;
+			border-radius: 6px
+		}
+
+		.step {
+			height: 50px;
+			width: 50px;
+			margin: 5px auto;
+			border-radius: 25px;
+			background: #629BC0;
+			text-align: center;
+			line-height: 50px;
+			color: #FFF;
+			font-weight: 900;
+		}
+
+		input[type='button'].buttons {
+			width: 8em;
+			margin-left: 10px;
+			height: 2.5em;
+			margin-top: 0.15em;
+			border-radius: 10px;
+			background: linear-gradient(#DEDFE4, #A0A1A3);
+
+			border: none;
+			color: #000;
+			font-weight: 900;
+			outline: none;
+		}
+
+		input[type='button'].buttons.active {
+			background: #7623F1;
+			color: #fff;
+		}
+
+		select {
+			appearance: none;
+			-moz-appearance: none;
+			-webkit-appearance: none;
+			background: none;
+			background: url("img/arrow.png") no-repeat scroll right center transparent;
+			padding-right: 14px;
+			float: left;
+			margin-left: 2px;
+			height: 2.8em;
+			padding: 0px 100px 0px 100px;
+			border: 1px solid #7623F1;
+			font-size: 0.9em;
+		}
+
+		select::-ms-expand {
+			display: none;
+		}
+
+		#download,
+		#preview {
+			display: block;
+			float: left;
+			width: 8em;
+			margin-left: 10px;
+			height: 2.5em;
+			margin-top: 0.15em;
+			border-radius: 10px;
+			background: linear-gradient(#DEDFE4, #A0A1A3);
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#DEDFE4', endColorstr='#A0A1A3', GradientType=0);
+			text-align: center;
+			line-height: 2.5em;
+			color: #000;
+			font-size: 0.9em;
+			font-weight: 900;
+			cursor: pointer;
+			text-decoration: none;
+		}
+
+		#download.active,
+		#preview.active {
+			background: #7623F1;
+			color: #fff;
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7623F1', endColorstr='#7623F1', GradientType=0);
+		}
+
+		.btn.btn-primary.fileinput-button {
+			background: #00B7EE
+		}
+
+		.btn.btn-primary.fileinput-button.normalpreview,
+		.btn.btn-primary.fileinput-button.highpreview {
+			float: left;
+			background: -webkit-gradient(linear, left top, left bottom, from(#0095cc), to(#4c00c7));
+			background: -moz-linear-gradient(top, #0095cc, #4c00c7);
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0095cc', endColorstr='#00678e');
+		}
+
+        .btn.btn-primary.fileinput-button.normalpreview,
+        .btn.btn-primary.fileinput-button.canvaspreview {
+            float: left;
+            background: -webkit-gradient(linear, left top, left bottom, from(#0095cc), to(#4c00c7));
+            background: -moz-linear-gradient(top, #0095cc, #4c00c7);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0095cc', endColorstr='#00678e');
+        }
+
+		#normalpreview.disabled,
+		#highpreview.disabled {
+			background: #A0A1A3
+		}
+
+        #normalpreview.disabled,
+        #canvaspreview.disabled {
+            background: #A0A1A3
+        }
+
+		.button_group .label_check, .button_group .label_check1 {
+			background: url(img/check-off.png) no-repeat;
+		}
+
+		.button_group .label_check input, .button_group .label_check1 input {
+			position: absolute;
+			left: -9999px;
+		}
+
+		.button_group .label_check,  .button_group .label_check1{
+			padding-left: 34px;
+			display: block;
+			cursor: pointer;
+			line-height: 20px;
+		}
+
+		.button_group label.c_on {
+			background: url(img/check-on.png) no-repeat;
+		}
+	</style>
+	<!--[if lt IE 10]>
+        <style>select{padding:0px}</style>
+    <![endif]-->
+
+	<script src="js/respond.js"></script>
+
+	<style type="text/css">
+		article,
+		aside,
+		dialog,
+		footer,
+		header,
+		section,
+		footer,
+		nav,
+		figure,
+		menu {
+			display: block;
+		}
+	</style>
+	<script>
+		(function () {
+			if (!
+				/*@cc_on!@*/
+				0)
+				return;
+			var e = "abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video"
+				.split(', ');
+			var i = e.length;
+			while (i--) {
+				document.createElement(e[i]);
+			}
+		})
+	</script>
+	<![endif]–>
+</head>
+
+<body>
+	<header>
+		<div class="container">
+			<nav class="header-menu-nav">
+				<div class="logo">
+					<a href="/"><img src="img/ow.jpg" style="border: none;" /></a>
+				</div>
+				<div class="quick-menu">
+                	<a href="http://www.yozodcs.com" target="_blank">新版</a>
+					<ul>
+						<li><a href="index.html">概览</a></li>
+						<li><a href="fileconvert.html">介绍</a></li>
+						<li class="nav-current"><a href="examples.html">示例</a></li>
+						<li><a href="help.html">文档</a></li>
+						<li><a href="http://qa.yozosoft.com" target="_blank">问答</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</header>
+	<section class="body_content">
+		<div class="container"
+			style=" min-width:1170px;box-shadow: 0 0 10px 5px #888;padding-bottom:20px">
+			<header>
+				<h2>在线文档预览示例</h2>
+			</header>
+            <div class="type_button">
+            	<ul>
+                	<li>
+                    	<div class="outcorder"></div>
+                    	<div class="corner"></div>
+                    	<a href="#" class="first">文件预览</a>
+                        <div class="corner1"></div>
+                        <div class="outcorder1"></div>
+                    </li>
+                    <li>
+                    	<div class="outcorder"></div>
+                    	<div class="corner"></div>
+                    	<a href="#" class="second">文档转换</a>
+                        <div class="corner1"></div>
+                        <div class="outcorder1"></div>
+                    </li>
+                </ul>
+            </div>
+            <!--第一个border-->
+            <div class="border first">
+                <div class="document_type">
+
+                    <div class="main_content">
+                        <fieldset>
+                            <legend>
+                                <span class="fu_title">输入文件</span>
+                            </legend>
+                            <div class="button_group">
+                                <label style="float: left; top: 6px;" class="radio on"
+                                    data-type="uploadFile"><span class="pip"></span></label> <span
+                                    class="btn btn-primary fileinput-button"> <span>上传本地文件</span>
+                                    <input id="upfilebtn" type="file" name="file">
+                                </span> <span id="uploadRe">支持doc,docx,xls,xlsx,ppt,pptx,pdf,zip,rar,uof,ofd等文件</span>
+                            </div>
+
+                            <div class="button_group">
+                                <label style="float: left; top: 6px;" class="radio" data-type="onlineFile"><span class="pip"></span></label>
+                                <input style="cursor:default" value="在线文件地址 " type="button" class="save" id="urlButton" />
+                                <input name="downloadUrl" id="downloadUrl" value="http://www.yozodcs.com/example/doc/doctest.docx" style="width: 80%; font-family: 'book antiqua';" type="text">
+
+							</div>
+							<div class="button_group" style="margin-top:70px">
+								<label class="label_check" for="checkbox-01">
+									<input name="sample-checkbox-01" id="checkbox-01" value="1" type="checkbox" checked=""> 是否签批(目前只适用于word高清模式,图片模式和pdf标清)
+								</label>
+							</div>
+							<div class="button_group" style="margin-top:20px">
+								<label class="label_check1" for="checkbox-01">
+									<input name="sample-checkbox-01" id="checkbox-01" value="1" type="checkbox" checked=""> 是否异步(目前只适用于office格式高清模式,图片模式和pdf标清)
+								</label>
+							</div>
+                            <div id="result" style="float: left"></div>
+                        </fieldset>
+                    </div>
+                    <div class="main_content">
+                        <fieldset>
+                            <legend>
+                                <span class="fu_title">输出文件</span>
+                            </legend>
+
+                            <div class="button_resuLt" style="width: 100%; float: left">
+                                <div style="width: 24px; height: 20px; float: left;"></div>
+                                <div class="btn btn-primary fileinput-button normalpreview" id="normalpreview" onclick="convertFile(1,null)">
+                                    <span>标准预览</span>
+                                </div>
+                                <div id="result_bz" style="display: inline"></div>
+                            </div>
+                            <div class="button_resuLt" style="width: 100%; float: left">
+                                <div style="width: 24px; height: 20px; float: left;"></div>
+                                <div class="btn btn-primary fileinput-button highpreview" id="highpreview" onclick="convertFile(0,null)">
+                                    <span>高清预览</span>
+                                </div>
+                                <div id="result_gq"></div>
+                            </div>
+                              <!--  新页面预览，一般不开启 -->
+<!--                            <span>只支持word excel ppt</span>-->
+<!--                               <div class="button_resuLt" style="width: 100%; float: left">-->
+<!--                                <div style="width: 24px; height: 20px; float: left;"></div>-->
+<!--                                <div class="btn btn-primary fileinput-button canvaspreview" id="canvaspreview"-->
+<!--                                     onclick="convertFile(61,null)">-->
+<!--                                    <span>新页面预览</span>-->
+<!--                                </div>-->
+<!--                                <div id="result_canvas"></div>-->
+<!--                            </div>-->
+                           <input hidden="true" id="form_data" type="hidden" name="inputDir" />
+                        </fieldset>
+                    </div>
+<!--                    <div class="main_content">-->
+<!--                        <fieldset>-->
+<!--                            <legend>-->
+<!--                                <span class="fu_title">示例文件</span>-->
+<!--                            </legend>-->
+<!--                            <div class="examples_style"-->
+<!--                                style="background-image: url('img/wp24.png'); background-repeat: no-repeat;">-->
+<!--                                <div style="float: left; min-width: 350px">-->
+<!--                                    <a target="_blank" href="example/doc/doctest.docx"-->
+<!--                                        style="margin-left: 30px">docx文件</a>-->
+<!--                                </div>-->
+<!--                                <a target="_blank" href="example/doc/doctest.html" href="#"-->
+<!--                                    class="button blue bigrounded">标准预览</a> <a target="_blank"-->
+<!--                                    href="example/doc/doctest_hd.html" href="#"-->
+<!--                                    class="button blue bigrounded">高清预览</a>-->
+<!--                            </div>-->
+<!--                            <div class="examples_style"-->
+<!--                                style="background-image: url('img/ss24.png'); background-repeat: no-repeat;">-->
+<!--                                <div style="float: left; min-width: 350px">-->
+<!--                                    <a target="_blank" href="example/excel/xlstest.xls"-->
+<!--                                        style="margin-left: 30px">xls文件</a>-->
+<!--                                </div>-->
+<!--                                <a target="_blank" href="example/excel/xlstest.html" href="#"-->
+<!--                                    class="button blue bigrounded">标准预览</a> <a target="_blank"-->
+<!--                                    href="example/excel/xlstest_hd.html" href="#"-->
+<!--                                    class="button blue bigrounded">高清预览</a>-->
+<!--                            </div>-->
+<!--                            <div class="examples_style"-->
+<!--                                style="background-image: url('img/pg24.png'); background-repeat: no-repeat;">-->
+<!--                                <div style="float: left; min-width: 350px">-->
+<!--                                    <a target="_blank" href="example/ppt/ppttest.pptx"-->
+<!--                                        style="margin-left: 30px">pptx文件</a>-->
+<!--                                </div>-->
+<!--                                <a target="_blank" href="example/ppt/ppttest.html" href="#"-->
+<!--                                    class="button blue bigrounded">标准预览</a> <a target="_blank"-->
+<!--                                    href="example/ppt/ppttest_hd.html" href="#"-->
+<!--                                    class="button blue bigrounded">高清预览</a>-->
+<!--                            </div>-->
+<!--                            <div class="examples_style"-->
+<!--                                style="background-image: url('img/pdf24.png'); background-repeat: no-repeat;">-->
+<!--                                <div style="float: left; min-width: 350px">-->
+<!--                                    <a target="_blank" href="example/pdf/pdftest.pdf" style="margin-left: 30px">pdf文件</a>-->
+<!--                                </div>-->
+<!--                                <a target="_blank" href="example/pdf/pdftest.html" href="#" class="button blue bigrounded">标准预览</a>-->
+<!--                                <a target="_blank" href="http://dcs.yozosoft.com/pdf/generic/web/viewer.html?file=%2Fexample%2Fpdf%2Fpdftest.pdf" href="#"-->
+<!--                                    class="button blue bigrounded">高清预览</a>-->
+<!--                            </div>-->
+<!--                            &lt;!&ndash; sunnyawake test pdf.js &ndash;&gt;-->
+<!--                            <div class="examples_style"-->
+<!--                                style="background-image: url('img/pdf24.png'); background-repeat: no-repeat; "hidden="hidden">-->
+<!--                                <div style="float: left; min-width: 350px">-->
+<!--                                    <a target="_blank" href="pdf/mini/viewer.html?file=helloworld.pdf"-->
+<!--                                        style="margin-left: 30px">pdf文件2(pdf.js)</a>-->
+<!--                                </div>-->
+
+<!--                            </div>-->
+<!--                        </fieldset>-->
+<!--                    </div>-->
+
+                </div>
+            </div>
+            <!--第二个border-->
+<!--            <div class="border second">-->
+<!--                <div class="document_type">-->
+<!--                    -->
+<!--                    <div class="main_content">-->
+<!--                        <fieldset>-->
+<!--                            <legend>-->
+<!--                                <span class="fu_title">添加文档</span>-->
+<!--                            </legend>-->
+<!--                            <div style="width:70px;height:100px;display:block;float:left;padding-top:14px;margin-bottom:30px;margin-right:20px">-->
+<!--                            	<div style="height:30px;line-height:30px;text-align:center;font-weight:900;color:#256694">Step</div>-->
+<!--                                <div class="step" >1</div>-->
+<!--                            </div>-->
+<!--                            <div class="button_group">-->
+<!--                                <label style="float: left; top: 6px;" class="radio on"-->
+<!--                                    data-type="uploadFile"><span class="pip"></span></label> <span-->
+<!--                                    class="btn btn-primary fileinput-button"> <span>上传本地文件</span>-->
+<!--                                    <input id="upfilebtn1" type="file" name="file">-->
+<!--                                    -->
+<!--                                </span> <span id="uploadRe1">支持doc,docx,xls,xlsx,ppt,pptx,pdf等文件</span>-->
+<!--                                -->
+<!--                            </div>-->
+<!--                            <div class="button_group">-->
+<!--                                <label style="float: left; top: 6px;" class="radio"-->
+<!--                                    data-type="onlineFile"><span class="pip"></span></label> <input style="cursor:default"-->
+<!--                                    value="在线文件地址 " type="button" class="save" id="urlButton" /> <input-->
+<!--                                    name="downloadUrl" id="downloadUrl1"-->
+<!--                                    value="http://www.yozodcs.com/example/doc/doctest.docx"-->
+<!--                                    style="width: 60%; font-family: 'book antiqua';" type="text">-->
+<!--                            </div>-->
+<!--                            -->
+<!--                            <div id="result" style="float: left"></div>-->
+<!--                            <div style="margin-top:70px;">注意:输入待转换文档链接时，请提供在线文档的直接URL链接。例如(http://www.example-file.com/file.doc)</div>-->
+<!--                            -->
+<!--                        </fieldset>-->
+<!--                        -->
+<!--                    </div>-->
+<!--                    <div class="main_content">-->
+<!--                        <fieldset>-->
+<!--                            <legend>-->
+<!--                                <span class="fu_title">选择类型</span>-->
+<!--                            </legend>-->
+<!--        					<div style="width:70px;height:100px;display:block;float:left;padding-top:14px;margin-right:20px">-->
+<!--                            	<div style="height:30px;line-height:30px;text-align:center;font-weight:900;color:#256694">Step</div>-->
+<!--                                <div class="step" >2</div>-->
+<!--                            </div>-->
+<!--                            <div class="button_group" style="margin-top:50px">-->
+<!--                                <label style="float: left; top: 6px;" class="radio on"-->
+<!--                                    data-type="uploadFile"><span class="pip"></span></label> <input style="cursor:default" value="转换为 " type="button" class="save" id="urlButton">-->
+<!--                                <select id="select" >-->
+<!--                                  		<option value="-1" style="text-align:center">请选择支持转换成的格式</option>-->
+<!--                                        -->
+<!--                            	    </select>-->
+<!--                                    <input class="buttons" id="convert" type="button" value="转换">-->
+<!--                                    <input hidden="true" id="form_data1" type="hidden" name="inputDir">-->
+<!--                            </div>-->
+<!--                            -->
+<!--                        </fieldset>-->
+<!--                    </div>-->
+<!--                    <div class="main_content">-->
+<!--                        <fieldset>-->
+<!--                            <legend>-->
+<!--                                <span class="fu_title">转换结果</span>-->
+<!--                            </legend>-->
+<!--        					<div style="width:70px;height:100px;display:block;float:left;padding-top:14px;margin-right:20px">-->
+<!--                            	<div style="height:30px;line-height:30px;text-align:center;font-weight:900;color:#256694">Step</div>-->
+<!--                                <div class="step" >3</div>-->
+<!--                            </div>-->
+<!--                            <div class="button_group" style="margin-top:50px">-->
+<!--                                <label style="float: left; top: 6px;" class="radio on"-->
+<!--                                    data-type="uploadFile"><span class="pip"></span></label> -->
+<!--                                    <input style="cursor:default" value="下载链接" type="button" class="save" id="urlButton">-->
+<!--                                <input name="showUrl" id="showUrl" value="" style="margin-left:2px;width: 50%; font-family: 'book antiqua';" type="text">-->
+<!--                                <a class="buttons" id="download" value="下载" target="_blank">下载</a>-->
+<!--                                -->
+<!--                                <a class="buttons" id="preview"  value="下载" target="_blank">预览</a>-->
+<!--                            </div>-->
+<!--                        </fieldset>-->
+<!--                    </div>-->
+<!--                    -->
+<!--                </div>-->
+
+<!--            </div>-->
+            <!--两个border结束-->
+
+
+		</div>
+	</section>
+		<!--页脚-->
+	<footer class="foot">
+<!-- 		<div style="padding-top: 10px;">联系电话：13485056205（倪先生）</div> -->
+<!-- 		<div style="padding-top: 10px; text-align: center"> -->
+<!-- 			<a href="mailto:nzq@yozosoft.com" ><span>邮 箱： -->
+<!-- 					nzq@yozosoft.com</span> </a> -->
+<!-- 		</div> -->
+		<div style="padding-top: 10px;">联系电话：18921118427（翟先生）</div>
+		<div style="padding-top: 10px; text-align: center">
+			<a href="mailto:zk1048@yozosoft.com" ><span>邮 箱：
+					zk1048@yozosoft.com</span> </a>
+		</div>
+		<div style="padding-top: 10px; text-align: center">
+			<a href="termsofuse.html" target="_blank"><span>使用条款</span> </a>
+		</div>
+		<div style="padding-top: 10px; text-align: center">永中软件股份有限公司
+			苏ICP备10095690号-5</div>
+	</footer>
+	<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+	<script type="text/javascript" src="js/jquery.ui.widget.js"></script>
+	<script type="text/javascript" src="js/jquery.iframe-transport.js"></script>
+	<script type="text/javascript" src="js/jquery.fileupload.js"></script>
+	<script type="text/javascript"
+		src="js/jquery-isloading/js/jquery.isloading.js"></script>
+	<script type="text/javascript"
+		src="js/jquery-toastmessage/jquery.toastmessage.js"></script>
+
+	<script type="text/javascript">
+		var url_reg = /^http:\/\/.*(docx|doc|xls|xlsx|ppt|pptx|pdf|txt|jpg|gif|png|bmp)+$/;
+		var suffix = new RegExp("(docx|doc|xls|xlsx|ppt|pptx|pdf|txt|jpg|png|gif|bmp)$");
+		$('.label_check').click(function (e) {
+			e.preventDefault();
+			$('.label_check').hasClass("c_on") ? $('.label_check').removeClass("c_on") : $('.label_check').addClass("c_on")
+		});
+		$('.label_check1').click(function (e) {
+			e.preventDefault();
+			$('.label_check1').hasClass("c_on") ? $('.label_check1').removeClass("c_on") : $('.label_check1').addClass("c_on")
+		});
+		$(function () {
+			$(".button_group .label_check").hide();
+			$(".button_group .label_check1").hide();
+			$("#highpreview,#normalpreview").addClass("disabled")
+            $("#canvaspreview,#normalpreview").addClass("disabled")
+			$("#download,#preview,#convert").attr("disabled", true);
+			var radio1 = $(".second .document_type .main_content:eq(0)").find('label[class*=radio]');
+			var radio = $(".first .document_type .main_content:eq(0)").find('label[class*=radio]');
+			$("#select").change(function () {
+				if ($(this).children('option:selected').val() == -1) {
+					$("#convert").attr("disabled", false);
+					$("#convert").removeClass("active");
+				} else {
+					$("#convert").attr("disabled", false);
+					$("#convert").addClass("active");
+				}
+			})
+			$("#upfilebtn").click(function () {
+				$(".first label:eq(0)").addClass("on");
+				$(".first label:eq(1)").removeClass("on");
+				$("#highpreview,#normalpreview").addClass("disabled");
+                $("#canvaspreview,#normalpreview").addClass("disabled");
+			})
+			$(".second .document_type .main_content:eq(0)").find('label[class*=radio]').click(function () {
+
+				radio1.removeClass("on");
+				$(this).addClass("on");
+
+				if (radio1.eq(1).hasClass('on')) {
+					////当上传文件地址处于激活状态
+					//console.log("uploadFile");
+					//去除掉转换下载以及预览的样式,使之处于未激活状态
+					$("#download,#preview,#convert").attr("disabled", true);
+					$("#download,#preview,#convert").removeClass("active");
+
+					//使转换按钮处于激活状态
+					//$("#convert").attr("disabled",false);
+					//$("#convert").addClass("active");
+					//上传地址栏的显示处于初始状态
+					$("#uploadRe1").html("支持doc,docx,xls,xlsx,ppt,pptx,pdf等文件");
+					//屏蔽掉上传本地文件按钮
+					$("#upfilebtn1").attr("disabled", true);
+					$("#upfilebtn1").parent().css("background-color", "#A0A1A3");
+					//去除掉form_data1隐藏域里面的内容
+					$("#form_data1").val("");
+					//下载链接清空
+					$("#showUrl").val("");
+					//使下载链接失效
+					$("#download,#preview").removeAttr("href");
+					//去除掉select里面多余的option
+					$("#select option:eq(0)").nextAll().remove();
+					$("#select").append("<option value='2'>txt</option>"
+						+ "<option value='3'>pdf</option>"
+						+ "<option value='4'>gif</option>"
+						+ "<option value='5'>png</option>"
+						+ "<option value='6'>jpg</option>"
+						+ "<option value='7'>tiff</option>"
+						+ "<option value='8'>bmp</option>"
+						+ "<option value='29'>ofd</option>");
+					$("#downloadUrl1").blur(function () {
+						var url = $(this).val();
+						var index1 = url.lastIndexOf(".");
+						var index2 = url.length;
+						var urlf = url.substring(index1 + 1, index2);//后缀名
+						if (urlf.toLowerCase() == 'pdf') {
+							//去除掉select里面多余的option
+							$("#select option:eq(0)").nextAll().remove();
+							$("#select").append("<option value='9'>gif</option>"
+								+ "<option value='10'>png</option>"
+								+ "<option value='11'>jpg</option>"
+								+ "<option value='12'>tiff</option>"
+								+ "<option value='13'>bmp</option>"
+								+ "<option value='24'>txt</option>"
+								+ "<option value='29'>ofd</option>");
+						} else if (urlf == 'jpg' || urlf == "png" || urlf == "bmp" || urlf == "tiff" || urlf == "gif") {
+							$("#select option:eq(0)").nextAll().remove();
+							$("#select").append("<option value='23'>html</option>");
+						} else if (urlf == "zip" || urlf == "rar") {
+							$("#fileConvert select option:eq(0)").nextAll().remove();
+						} else {
+							//去除掉select里面多余的option
+							$("#select option:eq(0)").nextAll().remove();
+							$("#select").append("<option value='3'>pdf</option>"
+								+ "<option value='2'>txt</option>"
+								+ "<option value='4'>gif</option>"
+								+ "<option value='5'>png</option>"
+								+ "<option value='6'>jpg</option>"
+								+ "<option value='7'>tiff</option>"
+								+ "<option value='8'>bmp</option>"
+								+ "<option value='29'>ofd</option>");
+						}
+
+					})
+
+				} else if (radio1.eq(0).hasClass('on')) {
+					//当在线文件地址处于激活状态的时候
+					//console.log("onlineFile");
+					//去除掉转换下载以及预览的样式,使之处于未激活状态
+					$("#download,#preview,#convert").attr("disabled", true);
+					$("#download,#preview,#convert").removeClass("active");
+					$("#download,#preview").removeAttr("href");
+					$("#showUrl").val("");
+					//去除掉select里面多余的option
+					$("#select option:eq(0)").nextAll().remove();
+					$("#upfilebtn1").attr("disabled", false);
+					$("#upfilebtn1").parent().css("background-color", "#00B7EE");
+					$("#downloadUrl1").val("http://www.yozodcs.com/example/doc/doctest.docx");
+					//上传地址栏的显示处于初始状态
+					$("#uploadRe1").html("支持doc,docx,xls,xlsx,ppt,pptx,pdf等文件");
+					//去除掉form_data1隐藏域里面的内容
+					$("#form_data1").val("");
+
+
+				}
+			})
+			$(".first label[class*=radio]").click(function () {
+				$(".first label[class*=radio]").removeClass("on");
+				$(this).addClass("on");
+
+				if (radio.eq(1).hasClass('on')) {
+					$("#highpreview,#normalpreview").removeClass("disabled");
+                    $("#canvaspreview,#normalpreview").removeClass("disabled");
+					$(".button_group .label_check").show();
+					$(".button_group .label_check1").show();
+				} else if (radio.eq(0).hasClass('on')) {
+					$(".button_group .label_check").hide();
+					$(".button_group .label_check1").hide();
+					if ($("#form_data").val() == "") {
+						$("#highpreview,#normalpreview").addClass("disabled")
+                        $("#canvaspreview,#normalpreview").addClass("disabled")
+					}
+				}
+			});
+			$(".border.first").show();
+			$(".type_button ul li a.first").parent().css({ "top": "4px", "background": "linear-gradient(#5F9ABB,#E8EEF1)" });
+			$(".type_button ul li a.first").siblings(".outcorder,.outcorder1").css({ "background": "#E8EEF1" });
+			$(".type_button ul li a.second").click(function () {
+				$(".border.first").hide();
+				$(".border.second").show();
+			})
+			$(".type_button ul li a.first").click(function () {
+				$(".border.second").hide();
+				$(".border.first").show();
+			})
+			$(".type_button ul li a").click(function () {
+				$(this).parent().css({ "top": "4px", "background": "linear-gradient(#5F9ABB,#E8EEF1)" });
+				$(this).siblings(".outcorder,.outcorder1").css({ "background": "#E8EEF1" });
+				$(this).parent().siblings().css({ "top": "0px", "background": "#E3E4E6" });
+				$(this).parent().siblings().children(".outcorder,.outcorder1").css({ "background": "#E3E4E6" });
+			})
+
+
+		});
+		var sourceFolder="";
+		$('#upfilebtn').fileupload({
+				url: 'testUpload',
+				dataType: 'json',
+				formData: {
+					convertType: "1"
+				},//如果需要额外添加参数可以在这里添加
+
+				done: function (e, data) {
+					if (data.result.result == 0) {
+						$("#form_data").val(data.result.data);
+						$.isLoading("hide");
+						$().toastmessage('showSuccessToast', '上传成功');
+						var fileName = data.result.data;
+						fileName = fileName.replace("\\", "/");
+						sourceFolder = fileName.substring(0, fileName.lastIndexOf("/"));
+						$("#normalpreview,#highpreview").removeClass("disabled");
+                        $("#normalpreview,#canvaspreview").removeClass("disabled");
+						$("#uploadRe")
+							.html(
+								fileName.substring(fileName
+									.lastIndexOf("/") + 1));
+						$(".button_group .label_check").show();
+						$(".button_group .label_check1").show();
+					} else {
+						$.isLoading("hide");
+						$().toastmessage('showErrorToast', data.result.message);
+					}
+				},
+				change: function (e, data) {
+					$.isLoading({
+						text: "请稍后，正在上传"
+					});
+				},
+				error: function () {
+					$.isLoading("hide");
+					$().toastmessage('showErrorToast', '上传失败！');
+				}
+			});
+
+		$('#upfilebtn1').fileupload(
+			{
+				url: 'testUpload',
+				dataType: 'json',
+				formData: {
+					convertType: "1"
+				},//如果需要额外添加参数可以在这里添加
+				done: function (e, data) {
+					$.isLoading("hide");
+					if (data.result.result == 0) {
+						var fileName = data.result.data;
+						fileName = fileName.replace("\\", "/");
+						sourceFolder = fileName.substring(0, fileName.lastIndexOf("/"));
+						var index1 = fileName.lastIndexOf(".");
+						var index2 = fileName.length;
+						var postf = fileName.substring(index1 + 1, index2);//后缀名
+						$("#form_data1").val(data.result.data);
+						$("#uploadRe1")
+							.html(
+								fileName.substring(fileName
+									.lastIndexOf("/") + 1));
+						$().toastmessage('showSuccessToast', '上传成功');
+						//去除掉转换下载以及预览的样式,使之处于未激活状态
+						$("#download,#preview,#convert").attr("disabled", true);
+						$("#download,#preview,#convert").removeClass("active");
+						$("#download,#preview").removeAttr("href");
+						$("#showUrl").val("");
+						if (postf.toLowerCase() == 'pdf') {
+							$("#select option:eq(0)").nextAll().remove();
+							$("#select").append("<option value='9'>gif</option>"
+								+ "<option value='10'>png</option>"
+								+ "<option value='11'>jpg</option>"
+								+ "<option value='12'>tiff</option>"
+								+ "<option value='13'>bmp</option>"
+								+ "<option value='24'>txt</option>"
+								+ "<option value='29'>ofd</option>");
+						} else if (postf == 'jpg' || postf == "png" || postf == "bmp" || postf == "tiff" || postf == "gif") {
+							$("#select option:eq(0)").nextAll().remove();
+							$("#select").append("<option value='23'>html</option>");
+						} else if (postf == "zip" || postf == "rar") {
+							$("#fileConvert select option:eq(0)").nextAll().remove();
+						} else {
+							$("#select option:eq(0)").nextAll().remove();
+							$("#select").append("<option value='3'>pdf</option>"
+								+ "<option value='2'>txt</option>"
+								+ "<option value='4'>gif</option>"
+								+ "<option value='5'>png</option>"
+								+ "<option value='6'>jpg</option>"
+								+ "<option value='7'>tiff</option>"
+								+ "<option value='8'>bmp</option>"
+								+ "<option value='29'>ofd</option>");
+						}
+					} else {
+						$().toastmessage('showErrorToast', data.result.message);
+					}
+				},
+				change: function (e, data) {
+					$.isLoading({
+						text: "请稍后，正在上传"
+					});
+				},
+				error: function () {
+					$.isLoading("hide");
+					$().toastmessage('showErrorToast', '上传失败！');
+				}
+
+			});
+
+		function truncateSuffix(fileName) {
+			var index1 = fileName.lastIndexOf(".");
+			var index2 = fileName.length;
+			return fileName.substring(index1 + 1, index2);
+		}
+		function createDiv(obj, convertType) {
+			if (convertType == 0) {
+				$("#result_gq > .result").remove();
+				if (obj.result == 0) {
+					$("#result_gq")
+						.append(
+							"<div class='result'><div class='left_code'><img src='code?codeUrl="
+							+ obj.data
+							+ "' ><br/><sapn>扫描二维码</sapn><br/><sapn>即可预览</sapn></div><div class='right_code'><sapn>可以将以下链接复制到电子邮件或分享给您的好友：</sapn><br/><a href='" + obj.data + "' target='_blank'>"
+							+ obj.data + "</a></div></div>");
+					window.open(obj.data, "_blank");
+				} else {
+					$("#result_gq").append(
+						"<div class='result'>" + obj.message + "</div>");
+				}
+			} else if(convertType == 61) {
+                $("#result_canvas > .result").remove();
+                if (obj.result == 0) {
+                    $("#result_canvas")
+                        .append(
+                            "<div class='result'><div class='left_code'><img src='code?codeUrl="
+                            + obj.data
+                            + "' ><br/><sapn>扫描二维码</sapn><br/><sapn>即可预览</sapn></div><div class='right_code'><sapn>可以将以下链接复制到电子邮件或分享给您的好友：</sapn><br/><a href='" + obj.data + "' target='_blank'>"
+                            + obj.data + "</a></div></div>");
+                    window.open(obj.data, "_blank");
+                } else {
+                    $("#result_canvas").append(
+                        "<div class='result'>" + obj.message + "</div>");
+                }
+            } else {
+				$("#result_bz > .result").remove();
+				if (obj.result == 0) {
+					$("#result_bz")
+						.append(
+							"<div class='result'><div class='left_code'><img src='code?codeUrl="
+							+ obj.data
+							+ "' ><br/><sapn>扫描二维码</sapn><br/><sapn>即可预览</sapn></div><div class='right_code'><sapn>可以将以下链接复制到电子邮件或分享给您的好友：</sapn><br/><a href='" + obj.data + "' target='_blank'>"
+							+ obj.data + "</a></div></div>");
+					window.open(obj.data, "_blank");
+				} else {
+					$("#result_bz").append(
+						"<div class='result'>" + obj.message + "</div>");
+				}
+			}
+		}
+
+		function createUrl(data, convertType) {
+			var isAsync = $(".label_check1").hasClass("c_on") ? 1 : 0;
+			//console.log("createUrl");
+			$("#showUrl").val("");
+			if (data.result == 0) {
+				if (convertType == 2 || convertType == 3 || convertType == 24 || convertType == 29) {
+					var url = data.data[0];
+					var type;
+					$("#showUrl").val("" + url + "");
+					$("#download").attr("disabled", false);
+					$("#download").addClass("active");
+					$("#download").attr("href", "" + url + "");
+					$("#preview").attr("disabled", false);
+					$("#preview").addClass("active");
+					//var type = $(".second .document_type .main_content:eq(0)").find('label[class*=on]').data("type");
+					//console.log(url);
+					if (convertType == 3) {
+						type = 14;
+					} else if (convertType == 29) {
+						type = 21;
+					} else {
+						type = 1;
+					}
+					$.isLoading({
+						text: "请稍后，正在转换"
+					});
+					$.ajax({
+						url: "onlinefile",
+						data: {
+							"downloadUrl": url,
+							"convertType": type,
+							"isAsync": isAsync
+						},
+						dataType: "json",
+						type: "post",
+						success: function (data) {
+							$.isLoading("hide");
+							$("#preview").attr("href", "" + data.data + "");
+						},
+						error: function (data) {
+							$.isLoading("hide");
+							//console.error(data)
+						}
+					})
+
+				} else {
+					var url = data.zipUrl;
+					$("#showUrl").val("" + url + "");
+					$("#download").attr("disabled", false);
+					$("#download").addClass("active");
+					$("#download").attr("href", "" + url + "");
+					$("#preview").attr("disabled", false);
+					$("#preview").addClass("active");
+					//var type = $(".second .document_type .main_content:eq(0)").find('label[class*=on]').data("type");
+					$.isLoading({
+						text: "请稍后，正在转换"
+					});
+					$.ajax({
+						url: "onlinefile",
+						data: {
+							"downloadUrl": url,
+							"convertType": 1
+
+						},
+						dataType: "json",
+						type: "post",
+						success: function (data) {
+							$.isLoading("hide");
+							$("#preview").attr("href", "" + data.data + "");
+						},
+						error: function (data) {
+							$.isLoading("hide");
+							//console.error(data)
+						}
+					})
+				}
+
+			} else {
+				$().toastmessage('showErrorToast', "" + data.message + "");
+				$("#download,#preview").attr("disabled", true);
+				$("#download,#preview").removeClass("active");
+				$("#download").removeAttr("href");
+				$("#showUrl").val("");
+			}
+		}
+
+		$("#convert").click(function () {
+			var convertType = $("#select").val();
+			var obj = $("#form_data1");
+			var obj_value = $.trim(obj.val());
+			//console.log("obj_value="+obj_value)
+			var type = $(".second .document_type .main_content:eq(0)").find('label[class*=on]').data("type");
+			if (type == "uploadFile") {
+				if (obj_value == "") {
+					$().toastmessage('showErrorToast', '请上传文件!');
+				}
+				else if (convertType == -1 || convertType == "") {
+					$().toastmessage('showWarningToast', '请选择转换格式!');
+				} else {
+					if (convertType == 2 || convertType == 3 || convertType == 24 || convertType == 29) {
+						$.isLoading({
+							text: "请稍后，正在转换"
+						});
+						$.ajax({
+							url: "convert",
+							data: {
+								"inputDir": obj_value,
+								"convertType": convertType
+							},
+							dataType: "json",
+							type: "post",
+							success: function (data) {
+								$.isLoading("hide");
+								createUrl(data, convertType);
+							},
+							error: function (data) {
+								$.isLoading("hide");
+								console.error(data)
+							}
+						})
+					} else {
+						$.isLoading({
+							text: "请稍后，正在转换"
+						});
+						$.ajax({
+							url: "convert",
+							data: {
+								"inputDir": obj_value,
+								"isZip": 1,
+								"convertType": convertType
+
+							},
+							dataType: "json",
+							type: "post",
+							success: function (data) {
+								$.isLoading("hide");
+								createUrl(data, convertType);
+							},
+							error: function (data) {
+								$.isLoading("hide");
+								console.error(data)
+							}
+						})
+					}
+				}
+			} else if (type == "onlineFile") {
+				var obj = $("#downloadUrl1");
+				var obj_value = $.trim(obj.val());
+				if (obj_value == "") {
+					$().toastmessage('showErrorToast', '请输入网址');
+					obj.focus();
+				}
+				else if (convertType == -1 || convertType == "") {
+					$().toastmessage('showWarningToast', '请选择转换格式!');
+
+				}
+				else {
+
+					/*
+					else if (!url_reg.test(obj_value)) {
+					$().toastmessage('showErrorToast', '请输入正确的网址');
+					obj.focus();
+					}
+					 */
+					if (convertType == 2 || convertType == 3 || convertType == 24 || convertType == 29) {
+						$.isLoading({
+							text: "请稍后，正在上传"
+						});
+						//$this.attr("disabled", true);
+						$.ajax({
+							url: "onlinefile",
+							data: {
+								"downloadUrl": obj_value,
+								"convertType": convertType
+							},
+							dataType: "json",
+							type: "post",
+							success: function (data) {
+								$.isLoading("hide");
+								createUrl(data, convertType);
+							},
+							error: function (data) {
+								$.isLoading("hide");
+								console.error(data)
+							}
+						})
+					} else {
+						$.isLoading({
+							text: "请稍后，正在转换"
+						});
+						$.ajax({
+							url: "onlinefile",
+							data: {
+								"downloadUrl": obj_value,
+								"isZip": 1,
+								"convertType": convertType,
+								"isAsync": isAsync
+							},
+							dataType: "json",
+							type: "post",
+							success: function (data) {
+								$.isLoading("hide");
+								createUrl(data, convertType);
+							},
+							error: function (data) {
+								$.isLoading("hide");
+								console.error(data)
+							}
+						})
+					}
+				}
+			}
+		});
+		function convertFile2(convertType) {
+			var password = prompt("请输入文档密码");
+			if (password != null && password != "") {
+				convertFile(convertType, password);
+			}
+		}
+		function convertFile(convertType, password) {
+			var pdfreg = new RegExp("(pdf)$", "i");
+			var ofdreg = new RegExp("(ofd)$", "i");
+			var imgreg = "jpg,png,bmp,tiff,gif";
+			var isSignature = $(".label_check").hasClass("c_on") ? 1 : 0;
+			var isAsync = $(".label_check1").hasClass("c_on") ? 1 : 0;
+			//先看勾选按钮，然后决定用什么方法
+			var type = $(".first label[class*=on]").data("type");
+			if (type == "uploadFile") {
+				var obj = $("#form_data");
+				var obj_value = $.trim(obj.val());
+				//console.log(obj_value);
+				//console.log(pdfreg.test($("#form_data").val()));
+				var param = convertType;
+				if (pdfreg.test($("#form_data").val())) {
+					param = param == 1 ? 14 : 20;
+				} else if (ofdreg.test($("#form_data").val())) {
+					param = param == 1 ? 21 : 21;
+				} else if (truncateSuffix(obj_value).toLowerCase() == "tif" || truncateSuffix(obj_value).toLowerCase() == "tiff") {
+					param = 17;
+				}
+
+				var $this = $(this);
+				if (obj_value == "") {
+					//$().toastmessage('showErrorToast', '请输入网址');
+					obj.focus();
+				} else {
+					$.isLoading({
+						text: "请稍后，正在转换"
+					});
+					//$this.attr("disabled", true);
+					if (password != null && password != "") {
+						$.ajax({
+							url: "convert",
+							data: {
+								"inputDir": obj_value,
+								"convertType": param,
+								"password": password,
+								"isAsync": isAsync
+								//"wmContent":"YOZOSOFT",
+								//"wmSize":20
+
+							},
+							dataType: "json",
+							type: "post",
+							success: function (data) {
+								$.isLoading("hide");
+								if (data.result == 4) {
+									convertFile2(convertType)
+								}
+								createDiv(data, convertType)
+							},
+							error: function (data) {
+								$.isLoading("hide");
+								console.error(data)
+							}
+						})
+					} else {
+						$.ajax({
+							url: "convert",
+							data: {
+								"inputDir": obj_value,
+								"convertType": param,
+								"isAsync": isAsync,
+								"sourceFolder" : sourceFolder,
+								"isDownload" : isSignature,
+								"isSignature":isSignature
+								//"wmContent":"YOZOSOFT",
+								//"wmSize":20
+
+							},
+							dataType: "json",
+							type: "post",
+							success: function (data) {
+								$.isLoading("hide");
+								if (data.result == 4) {
+									convertFile2(convertType)
+								}
+								createDiv(data, convertType)
+							},
+							error: function (data) {
+								$.isLoading("hide");
+								console.error(data)
+							}
+						})
+					}
+				}
+			} else if (type == "onlineFile") {
+				var obj = $("#downloadUrl");
+				var obj_value = $.trim(obj.val());
+				var param = convertType;
+				if (pdfreg.test(obj_value)) {
+					param = param == 1 ? 14 : 20;
+				} else if (ofdreg.test(obj_value)) {
+					param = param == 1 ? 21 : 21;
+				} else if (truncateSuffix(obj_value).toLowerCase() == "tif" || truncateSuffix(obj_value).toLowerCase() == "tiff") {
+					param = 17;
+				}
+				var $this = $(this);
+				if (obj_value == "") {
+					$().toastmessage('showErrorToast', '请输入网址');
+					obj.focus();
+				} else {
+					/*
+					else if (!url_reg.test(obj_value)) {
+					$().toastmessage('showErrorToast', '请输入正确的网址');
+					obj.focus();
+					}
+					 */
+					$.isLoading({
+						text: "请稍后，正在上传"
+					});
+					//$this.attr("disabled", true);
+					$.ajax({
+						url: "onlinefile",
+						data: {
+							"downloadUrl": obj_value,
+							"convertType": param,
+							"isAsync": isAsync,
+							"sourceFolder" : sourceFolder,
+							"isDownload" : isSignature,
+							"isSignature":isSignature
+							//"wmContent":"YOZOSOFT",
+							//"wmSize":20
+						},
+						dataType: "json",
+						type: "post",
+						success: function (data) {
+							$.isLoading("hide");
+							createDiv(data, convertType)
+						},
+						error: function (data) {
+							$.isLoading("hide");
+							console.error(data)
+						}
+					})
+				}
+			}
+		}
+	</script>
+
+    <script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "2", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "slide": { "type": "slide", "bdImg": "6", "bdPos": "right", "bdTop": "187.5" } }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
+<script src="js/qqjs.js" ></script>
+
+</body>
+</html>
