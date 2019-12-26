@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!--
   ~ =============================================================
-  ~ Copyright (c) 2012 ~ 2019. finstone.com All rights reserved.
+  ~ Copyright (c) 2012 ~ 2019. wangshi.com All rights reserved.
   ~                                           Created by wangjian
   ~ =============================================================
   -->
 
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.finstone.order.mapper.OrderMapper">
-    <resultMap id="ordersMap" type="com.finstone.order.entity.Orders">
+<mapper namespace="com.wangshi.order.mapper.OrderMapper">
+    <resultMap id="ordersMap" type="com.wangshi.order.entity.Orders">
         <id column="id" property="id" />
         <result column="order_no" property="orderNO" />
         <result column="order_status" property="orderStatus" />
@@ -22,7 +22,7 @@
         <result column="" property="" />
         <collection property="orderDetailList" column="create_user" select="orderDetailList" />
     </resultMap>
-    <select id="orderDetailList" resultType="com.finstone.order.entity.OrderDetail">
+    <select id="orderDetailList" resultType="com.wangshi.order.entity.OrderDetail">
       SELECT * FROM orders_detail
     </select>
 </mapper>

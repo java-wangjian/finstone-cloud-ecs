@@ -75,7 +75,7 @@ spring:
 
 mybatis-plus:
   mapper-locations: classpath:/mapper/**Mapper.xml
-  type-aliases-package: com.finstone.commodity.entity
+  type-aliases-package: com.wangshi.commodity.entity
   global-config:
     db-config:
       id-type: uuid

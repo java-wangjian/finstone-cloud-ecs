@@ -26,7 +26,7 @@ eureka:
 
 mybatis-plus:
   mapper-locations: classpath:/mapper/**Mapper.xml
-  type-aliases-package: com.finstone.order.entity
+  type-aliases-package: com.wangshi.order.entity
   global-config:
     db-config:
       id-type: uuid
