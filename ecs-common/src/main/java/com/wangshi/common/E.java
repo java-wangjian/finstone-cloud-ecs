@@ -7,7 +7,9 @@
 
 package com.wangshi.common;
 
-import java.util.Date;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Author: wangjian
@@ -17,14 +19,16 @@ import java.util.Date;
  */
 public class E {
     public static void main(String[] args) {
-        Date d1 = new Date(2018);
-        Date d2 = new Date();
-        long n1 = d1.getTime();
-        long n2 = d2.getTime();
-        long diff = Math.abs(n1 - n2);
-        System.out.println(diff);
+//        List<String> strings = Arrays.asList("abc", "", "bc", "efg", "abcd", "", "jkl");
+//        List<String> filtered = strings.stream().filter(w -> !w.contains("abcd")).collect(Collectors.toList());
+//        System.out.println(filtered);
 
-        diff /= 3600 * 1000 * 24;
-        System.out.println(diff);
+
+        List<String> strings1 = Arrays.asList("abc", "", "bc", "efg", "abcd","", "jkl");
+        List<String> filtered1 = strings1.stream().filter(string -> !string.isEmpty()).collect(Collectors.toList());
+
+        System.out.println("筛选列表: " + filtered1);
+        String mergedString = strings1.stream().filter(string -> !string.isEmpty()).collect(Collectors.joining(", "));
+        System.out.println("合并字符串: " + mergedString);
     }
 }
