@@ -44,6 +44,7 @@ public class UserCenterController {
             @HystrixProperty(name = "metrics.rollingStats.numBuckets", value = "12"),
             @HystrixProperty(name = "metrics.rollingStats.timeInMilliseconds", value = "1440")
     })
+
     @GetMapping("userOrderList/{userId}")
     public Object getUserOrderList(@PathVariable String userId){
         Map<String,Object> resultMap = new HashMap<>();
